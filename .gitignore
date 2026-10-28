@@ -1,0 +1,53 @@
+# Build outputs and install packages
+dist/
+android/build/
+android/.gradle/
+android/classes/
+android/dex/
+android/dex-check/
+android/assets/
+android/package-assets/
+*.apk
+*.aab
+*.keystore
+
+# Local preview captures and generated QA images
+*.png
+*.jpg
+*.jpeg
+*.webp
+!web/branding/*.png
+
+# Downloaded candidates and processing scratch files
+tools/*.mp4
+tools/*.webm
+tools/*.mov
+tools/*.mkv
+tools/*.wav
+tools/*.mp3
+tools/*.png
+tools/*.jpg
+tools/*.jpeg
+tools/*.json
+tools/imageio_ffmpeg/
+tools/cc0-audio/
+tools/bt/
+tools/plat/
+tools/platform.zip
+tools/build-tools.zip
+tools/temp/
+
+# The web directory keeps only the seven media pairs used by tracks.js.
+web/media/*
+
+# Local logs and editor/system files
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Node tooling caches
+node_modules/
+npm-debug.log*
+

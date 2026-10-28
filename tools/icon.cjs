@@ -1,0 +1,1 @@
+const sharp=require('C:/Users/29213/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp');sharp('D:/codex/rain-sleep/web/leaf.svg').png().toFile('D:/codex/rain-sleep/leaf-icon.png').then(()=>console.log('Transparent leaf icon created'));
