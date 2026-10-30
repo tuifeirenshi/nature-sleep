@@ -1,5 +1,6 @@
 const $=id=>document.getElementById(id),native=typeof Android!=='undefined';
 const responsive=document.createElement('link');responsive.rel='stylesheet';responsive.href='responsive.css';document.head.append(responsive);
+if(native&&Android.getStatusBarInsetDp)document.documentElement.style.setProperty('--status-inset',Android.getStatusBarInsetDp()+'px');
 const tracks=window.SLEEP_TRACKS;
 const initialTrack=native&&Android.getTrack?Android.getTrack():null;
 let selected=tracks.find(t=>t.id===initialTrack)||tracks[0],playing=false,loading=false,deadline=0,chosen=0,ctx,buffer,gain,masterGain,sources=[],epoch=0,active=0,blend=false;const films=[$('filmA'),$('filmB')],buffers=new Map();

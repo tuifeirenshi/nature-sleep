@@ -5,4 +5,6 @@ body.minimal{background:#111815}body.minimal main{visibility:visible}body.minima
 #sounds button{flex:1 0 84px;min-width:84px}
 @media(max-width:600px){#sounds button{flex:0 0 88px;min-width:88px}}
 @media(orientation:landscape) and (max-height:640px){main{height:100dvh;min-height:0;padding:12px 24px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:38px minmax(0,1fr);gap:8px 24px}header{grid-column:1/-1;min-width:0}.player{min-width:0;padding:0;justify-content:center}h1{font-size:23px;margin:8px 0}.play{width:54px;height:54px;margin:14px 0 8px}.play svg{width:22px;height:22px}footer{width:100%;min-width:0;align-self:center}#sounds{width:100%;min-width:0;margin-bottom:10px}.sounds{min-width:0}.timers{grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}.timers button{min-width:0;padding:8px 1px;font-size:11px}.timer-row{margin-bottom:10px}.custom{margin-top:8px}}
+@media(max-width:600px){main{padding-top:max(22px,calc(var(--status-inset,0px) + 8px))}}
+@media(orientation:landscape) and (max-height:640px){main{padding-top:max(12px,calc(var(--status-inset,0px) + 4px))}}
 button{-webkit-tap-highlight-color:transparent}button:focus:not(:focus-visible){outline:none}
