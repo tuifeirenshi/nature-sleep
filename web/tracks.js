@@ -29,7 +29,7 @@ window.SLEEP_TRACKS = [
     icon: 'moon-star',
     video: 'media/summer-night4k.mp4',
     audio: 'media/forest-night-balanced.wav',
-    title: '在夏夜的森林里入眠'
+    title: '在夏夜的森林里'
   },
   {
     id: 'campfire',
@@ -53,6 +53,6 @@ window.SLEEP_TRACKS = [
     icon: 'brain',
     video: 'media/binaural-calm-light.mp4',
     audio: 'media/brainwave-balanced.wav?v=yourell-theta-138394',
-    title: '伴着舒缓的脑波节拍放松'
+    title: '伴着脑波放松'
   }
 ];

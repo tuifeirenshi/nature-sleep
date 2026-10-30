@@ -63,6 +63,7 @@ const {chromium}=require('C:/Users/29213/.cache/codex-runtimes/codex-primary-run
     await page.evaluate(()=>window.__interruptedBackground);
     await page.waitForFunction(()=>!videoLoading&&films[active].currentSrc.endsWith('/media/summer-night4k.mp4'));
 
+    await page.click('#timerToggle');
     await page.click('[data-min="15"]');
     if(!(await page.evaluate(()=>chosen===15&&deadline===0))) throw Error('timer selection while paused started its countdown');
     await page.click('#play');
