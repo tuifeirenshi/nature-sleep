@@ -2,6 +2,22 @@ $ErrorActionPreference = 'Stop'
 $root = $PSScriptRoot
 $env:TEMP = "$root\tools\temp"
 $env:TMP = $env:TEMP
+$signing = @{}
+$localSigning = "$root\tools\signing.local.properties"
+if (Test-Path $localSigning) {
+    foreach ($line in Get-Content $localSigning) {
+        if ($line -match '^\s*([^#!\s][^=]*)\s*=\s*(.*)$') { $signing[$matches[1].Trim()] = $matches[2].Trim() }
+    }
+}
+if (!$env:NATURE_SLEEP_KEYSTORE -and $signing.keystorePath) { $env:NATURE_SLEEP_KEYSTORE = $signing.keystorePath }
+if (!$env:NATURE_SLEEP_STORE_PASSWORD -and $signing.storePassword) { $env:NATURE_SLEEP_STORE_PASSWORD = $signing.storePassword }
+if (!$env:NATURE_SLEEP_KEY_PASSWORD -and $signing.keyPassword) { $env:NATURE_SLEEP_KEY_PASSWORD = $signing.keyPassword }
+if (!$env:NATURE_SLEEP_KEY_ALIAS -and $signing.keyAlias) { $env:NATURE_SLEEP_KEY_ALIAS = $signing.keyAlias }
+$keystore = if ($env:NATURE_SLEEP_KEYSTORE) { $env:NATURE_SLEEP_KEYSTORE } else { "$root\tools\rain-sleep.keystore" }
+if (![System.IO.Path]::IsPathRooted($keystore)) { $keystore = Join-Path $root $keystore }
+if (!(Test-Path $keystore)) { throw "Signing keystore not found: $keystore" }
+if (!$env:NATURE_SLEEP_STORE_PASSWORD -or !$env:NATURE_SLEEP_KEY_PASSWORD) { throw "Set signing credentials in tools/signing.local.properties or NATURE_SLEEP_* environment variables." }
+if (!$env:NATURE_SLEEP_KEY_ALIAS) { $env:NATURE_SLEEP_KEY_ALIAS = 'rainsleep' }
 New-Item -ItemType Directory -Force $env:TEMP,"$root\android\classes","$root\android\dex","$root\dist" | Out-Null
 $node = (Get-Command node.exe -ErrorAction Stop).Source
 & $node "$root\tools\check-media.cjs"
@@ -17,16 +33,15 @@ foreach($name in @('rain-jungle','waves','stream','forest-night','campfire','sle
 if ($LASTEXITCODE) { throw 'javac failed' }
 & "$bt\d8.bat" --lib $platform --min-api 26 --output "$root\android\dex" (Get-ChildItem "$root\android\classes" -Recurse -Filter *.class).FullName
 if ($LASTEXITCODE) { throw 'd8 failed' }
-& "$bt\aapt.exe" package -f -M "$root\android\AndroidManifest.xml" -I $platform -S "$root\android\res" -A $packageAssets --replace-version --version-code 21 --version-name 21.0.0 -0 wav -0 mp4 -F "$root\dist\unsigned.apk"
+& "$bt\aapt.exe" package -f -M "$root\android\AndroidManifest.xml" -I $platform -S "$root\android\res" -A $packageAssets --replace-version --version-code 1 --version-name 1.0.0 -0 wav -0 mp4 -F "$root\dist\unsigned.apk"
 if ($LASTEXITCODE) { throw 'aapt failed' }
 Push-Location "$root\android\dex"
 & "$bt\aapt.exe" add "$root\dist\unsigned.apk" classes.dex
 Pop-Location
 & "$bt\zipalign.exe" -f 4 "$root\dist\unsigned.apk" "$root\dist\aligned.apk"
-if (!(Test-Path "$root\tools\rain-sleep.keystore")) { & keytool -genkeypair -keystore "$root\tools\rain-sleep.keystore" -storepass [REDACTED] -keypass [REDACTED] -alias rainsleep -keyalg RSA -keysize 2048 -validity 10000 -dname 'CN=Rain Sleep Personal App' }
-& "$bt\apksigner.bat" sign --ks "$root\tools\rain-sleep.keystore" --ks-pass pass:[REDACTED] --v4-signing-enabled false --out "$root\dist\nature-sleep-v21.apk" "$root\dist\aligned.apk"
+& "$bt\apksigner.bat" sign --ks $keystore --ks-key-alias $env:NATURE_SLEEP_KEY_ALIAS --ks-pass env:NATURE_SLEEP_STORE_PASSWORD --key-pass env:NATURE_SLEEP_KEY_PASSWORD --v4-signing-enabled false --out "$root\dist\nature-sleep-v1.0.apk" "$root\dist\aligned.apk"
 if ($LASTEXITCODE) { throw 'signing failed' }
-& "$bt\apksigner.bat" verify --verbose "$root\dist\nature-sleep-v21.apk"
+& "$bt\apksigner.bat" verify --verbose "$root\dist\nature-sleep-v1.0.apk"
 if ($LASTEXITCODE) { throw 'signature verification failed' }
 # Keep only the three latest installable releases after a successful build.
 $releases = Get-ChildItem "$root\dist" -File -Filter *.apk | Where-Object { $_.Name -match '^(nature-sleep|rain-sleep).*\.apk$' } | Sort-Object LastWriteTime -Descending

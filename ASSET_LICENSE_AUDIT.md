@@ -7,9 +7,9 @@
 ## 总结
 
 - 7 条音频的 Freesound 条目均可访问；本次请求到的条目 HTML 均含 Creative Commons 0 (CC0) 标记。CC0 通常允许复制、修改和再分发，但应保留条目/许可证据及处理记录。
-- 4 段当前视频来自 Mixkit，条目页均标记 `videoFree`；官方许可允许下载、复制、修改和分发，并允许商业与非商业项目。User Terms 另有类似或竞争产品限制；当前应用是助眠播放器，不提供素材搜索、下载或素材库服务。
-- 3 段当前视频来自 Pexels，已在真实浏览器中逐项打开；页面均显示 Free 许可、作者及与当前画面相符的标题。Pexels 官方许可允许用于 App 并允许修改。
-- 当前 7 个音频和 7 个视频均有官方许可依据。许可类型、链接、作者、哈希与核对说明见下表；Mixkit 竞争产品条款按当前产品功能判断不适用，未来若产品增加素材库/素材分发功能需重新评估。
+- 4 段当前视频来自 Mixkit，条目页均标记 `videoFree`；Video Free License 列出下载、复制、修改和分发等许可。User Terms 对类似或竞争产品/服务另有限制，针对本应用以及公开 Git/LFS、APK 分发方式尚无个案书面答复。
+- 3 段当前视频来自 Pexels，已在真实浏览器中逐项打开；页面均显示 Free 许可、作者及与当前画面相符的标题。Pexels 条款对独立素材再分发有限制；本应用公开仓库和 APK 内嵌素材的具体适用方式仍需按完整条款评估。
+- 当前 7 个音频和 7 个视频均记录了来源页面或平台许可依据，但这不等于每一种公开再分发方式都已确认。许可类型、链接、作者、哈希与核对说明见下表；状态汇总见 `THIRD_PARTY_NOTICES.md`。
 
 ## 当前 14 项
 
@@ -27,8 +27,8 @@
 
 ## 官方许可页面与本次访问结果
 
-- Mixkit [Video Free License](https://mixkit.co/license/modal/videoFree/)：官方原文允许下载、复制、修改、分发、公开表演和广播；当前使用条目为 22728、5016、51585、40047，均标记 `videoFree`。User Terms 的竞争产品限制按本应用当前功能判断：本应用是助眠播放器，不是 stock 素材服务。
-- Pexels [License](https://www.pexels.com/license/)：官方页面允许用于 App、允许修改，并禁止将素材作为 stock photo 或 wallpaper 平台再分发。2026-10-28 通过真实浏览器逐项核实 29644229（Dubang chang）、31206562（Shanto Debnath）、28561463（Chandresh Uike）；均显示 Free，具体记录见 `PEXELS_BROWSER_VERIFICATION_2026-10-28.md`。
+- Mixkit [Video Free License](https://mixkit.co/license/modal/videoFree/)：当前使用条目为 22728、5016、51585、40047，均记录为 `videoFree`。User Terms 的竞争产品限制对本应用及素材分发方式是否适用，尚未获个案书面解释。
+- Pexels [License](https://www.pexels.com/license/)：2026-10-28 通过真实浏览器逐项核实 29644229（Dubang chang）、31206562（Shanto Debnath）、28561463（Chandresh Uike）；均显示 Free。具体条款对本项目公开仓库与 APK 内嵌素材的适用方式仍需按完整许可判断，见 `PEXELS_BROWSER_VERIFICATION_2026-10-28.md`。
 - Freesound 当前七个条目均 HTTP 200，响应 HTML 中均检出 Creative Commons 0 标记；使用 CC0 官方说明：[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)。建议另保存每个条目页的本地副本或 PDF，并记录下载日期。
 
 ## 待办：发布可下载版本前

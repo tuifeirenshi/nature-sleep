@@ -1,0 +1,43 @@
+# 贡献说明 | Contributing
+
+中文 | English
+
+## 中文
+
+欢迎提交问题、建议和 Pull Request。项目作者没有承诺审核、回复或修复期限；问题和 PR 可能长期没有处理，也可能在没有详细说明的情况下关闭。
+
+### 代码贡献
+
+- 提交前先阅读 `README.md` 和 `AI_RULES.md`，并检查当前分支和工作区状态。
+- PR 请说明修改目的、涉及文件、测试命令与结果、尚未测试的部分，以及是否影响 Android、电脑预览或媒体。
+- 当前没有授予项目代码的通用许可证。外部提交的代码在代码许可和贡献授权方式明确前不会合并；提交 PR 不代表一定会被接受。
+- 不得提交无权使用的代码、账号凭据、访问令牌、签名密钥、订阅链接或私人配置。
+
+### 音视频与其他第三方素材
+
+新增或替换素材的 PR 必须提供来源 URL、作者/创作者、许可证名称与原文链接、下载日期、允许再分发和修改的依据、处理说明及输出文件 SHA-256。第三方素材不得冒称为原创。资料不完整时不会合并素材。
+
+未经明确安排，不要在 PR 中附 APK、AAB、签名密钥、缓存或临时构建产物。正式 APK 由项目作者通过 GitHub Release 发布。
+
+### 讨论与官方版本
+
+Issues 用于报告问题，Discussions 用于普通交流。GitHub 不保证每次 Fork 都通知项目作者。只有项目作者在官方仓库主分支和 Release 中发布的内容才是官方版本；Fork、个人构建或修改版不得冒充官方版本。
+
+## English
+
+Issues, suggestions, and Pull Requests are welcome. The project author makes no promise about review, response, or fix deadlines. Issues and PRs may remain unanswered or be closed without a detailed explanation.
+
+### Code contributions
+
+- Read `README.md` and `AI_RULES.md`; inspect the current branch and working tree before editing.
+- Describe the purpose, changed files, tests and results, untested areas, and effects on Android, desktop preview, or media.
+- No general code license is granted for this project. External code contributions will not be merged until code licensing and contribution permissions are decided. A PR is not guaranteed to be accepted.
+- Do not submit code, credentials, tokens, signing keys, subscription URLs, or private configuration that you are not authorized to share.
+
+### Media and other third-party assets
+
+For every added or replaced asset, include the source URL, creator, license and license text URL, download date, evidence of redistribution and modification permissions, processing notes, and output SHA-256. Do not claim third-party assets as original. Incomplete records will not be merged.
+
+Do not attach APKs, AABs, signing keys, caches, or temporary build outputs unless explicitly requested. The project author publishes official APKs through GitHub Releases.
+
+Only releases published by the project author in the official repository are official. Forks, personal builds, and modified versions must not be presented as official. GitHub does not guarantee notifications for every fork.
