@@ -35,8 +35,7 @@ git lfs ls-files
 构建依赖 PowerShell、Java 21、Node.js、Android SDK Platform 35 与 Android Build Tools 35.0.0。SDK 构建工具不包含在 Git 仓库中；当前脚本从 `tools/plat/android-35` 和 `tools/bt/android-15` 读取它们，首次构建前需通过 Android Studio SDK Manager 安装后放置到这些目录。运行：
 
 ```powershell
-.
-build.ps1
+.\build.ps1
 ```
 
 签名密钥及密码仅保存在本机，不提交到 Git。首次在另一台电脑构建时，需自行配置 `tools/signing.local.properties`，格式参考 `tools/signing.example.properties`。不要把真实签名密钥或密码发送给他人或上传到仓库。遗失签名密钥会影响后续为同一应用签名更新。
