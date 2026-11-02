@@ -2,8 +2,6 @@ English | [简体中文](README.zh-CN.md)
 
 # Nature Sleep
 
-English | [简体中文](README.zh-CN.md)
-
 Nature Sleep is a personal experimental Android sound player with seven soundscapes and matching video backgrounds. The project is evolving; features, media, and documentation may change. Audio experiences vary. The app does not promise to improve sleep and is not a substitute for medical advice or treatment.
 
 ![Phone preview (web preview)](docs/screenshots/v1.0-phone.png)
@@ -36,8 +34,8 @@ The Android build requires PowerShell, Java 21, Node.js, Android SDK Platform 35
 
 ## Media, Contributions, and Status
 
-See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md), [ASSET_LICENSE_AUDIT.md](ASSET_LICENSE_AUDIT.md), and [MEDIA_PROVENANCE_CURRENT.md](MEDIA_PROVENANCE_CURRENT.md) for media and icon sources and their recorded license status. Some platform terms still require further confirmation; a pending status is not a grant of permission. Historical files in Git may no longer be used and are not evidence of redistribution rights. The current playback list is `web/tracks.js`.
+See [PROJECT_LICENSES.md](docs/licensing/PROJECT_LICENSES.md) for third-party license evidence and unresolved permission questions, and [MEDIA_CATALOG.md](docs/media/MEDIA_CATALOG.md) for file paths, hashes, technical details, and processing records. Some platform terms still require further confirmation; a pending status is not a grant of permission. Historical files in Git may no longer be used and are not evidence of redistribution rights. The current playback list is `web/tracks.js`.
 
-Issues, suggestions, and Pull Requests are welcome, but there is no review or response deadline and merging is not guaranteed. External code contributions will not be merged until code licensing and contribution permissions are decided. Media contributions must include source URL, author, license, download date, redistribution and modification permissions, and SHA-256, and must be confirmed by the project author. No public project email is provided; use GitHub Issues or Discussions. GitHub does not guarantee a notification for every fork. See [CONTRIBUTING.md](CONTRIBUTING.md) and [AI_RULES.md](AI_RULES.md).
+Issues, suggestions, and Pull Requests are welcome, but there is no review or response deadline and merging is not guaranteed. External code contributions will not be merged until code licensing and contribution permissions are decided. Media contributions must include source URL, author, license, download date, redistribution and modification permissions, and SHA-256, and must be confirmed by the project author. No public project email is provided; use GitHub Issues or Discussions. GitHub does not guarantee a notification for every fork. See [CONTRIBUTING.md](docs/development/CONTRIBUTING.md) and [AI_RULES.md](docs/development/AI_RULES.md).
 
 This is a personal experimental project. No long-term maintenance, bug-free operation, or compatibility with every device is promised. Windows, iOS, and macOS support is undecided and has no timeline.

@@ -19,7 +19,7 @@ Download and install `nature-sleep-v1.0.apk`. This is a fresh-install package. A
 
 ## Media and Limitations
 
-Sources and SHA-256 values for audio, video, and the icon are listed in `THIRD_PARTY_NOTICES.md`. Freesound audio entries are recorded as CC0. Some Mixkit/Pexels terms for distribution through this public repository and the APK still require further confirmation. This disclosure does not grant permission. The project author will assess and address requests from rights holders or platforms.
+Sources and SHA-256 values for audio, video, and the icon are listed in [PROJECT_LICENSES.md](../licensing/PROJECT_LICENSES.md) and [MEDIA_CATALOG.md](../media/MEDIA_CATALOG.md). Freesound audio entries are recorded as CC0. Some Mixkit/Pexels terms for distribution through this public repository and the APK still require further confirmation. This disclosure does not grant permission. The project author will assess and address requests from rights holders or platforms.
 
 This is a personal experimental project. No long-term maintenance, bug-free operation, or compatibility with every device is promised. Audio experiences vary; the app does not promise to improve sleep and is not a substitute for medical advice or treatment.
 

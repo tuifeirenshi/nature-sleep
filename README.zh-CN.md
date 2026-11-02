@@ -2,8 +2,6 @@
 
 # 自然入眠
 
-[English](README.md) | 简体中文
-
 自然入眠是一款个人实验性质的 Android 声音播放器，包含七种自然音景与助眠声音，并为每种音景配有视频背景。项目仍在调整中，功能、素材和文档都可能变化。声音体验因人而异；本应用不承诺改善睡眠，也不替代医疗建议或治疗。
 
 ![手机预览界面（网页预览）](docs/screenshots/v1.0-phone.png)
@@ -44,7 +42,7 @@ git lfs ls-files
 
 ## 素材与授权
 
-当前网页预览使用的七组音视频、图标来源和核查状态见 [第三方素材说明](THIRD_PARTY_NOTICES.zh-CN.md)、[素材授权审计](ASSET_LICENSE_AUDIT.zh-CN.md) 与 [当前素材清单](MEDIA_PROVENANCE_CURRENT.zh-CN.md)。记录区分平台许可依据与对本项目再分发用途的判断；部分平台条款仍有待进一步确认。标注“待确认”不代表已经取得授权。
+第三方许可证据及尚未解决的授权问题见[项目许可证记录](docs/licensing/PROJECT_LICENSES.zh-CN.md)；素材文件路径、哈希、技术信息和处理记录见[当前素材目录](docs/media/MEDIA_CATALOG.zh-CN.md)。部分平台条款仍有待进一步确认；标注“待确认”不代表已经取得授权。
 
 仓库历史可能包含当前版本不再使用的旧素材、候选文件和处理记录。它们仅供历史参考，不代表仍被当前应用使用，也不代表获得了再分发许可。当前播放清单以 `web/tracks.js` 为准。
 
@@ -52,7 +50,7 @@ git lfs ls-files
 
 可以提交问题、建议或 Pull Request，但没有审核或回复时限，也不保证会合并。外部代码贡献在代码许可和贡献授权方式明确前不会合并。媒体贡献必须附来源 URL、作者、许可证、下载日期、再分发及修改权限和文件 SHA-256，并等待项目作者确认。
 
-目前不公开项目邮箱。可使用 GitHub Issues 报告问题、使用 Discussions 交流；是否处理由项目作者决定。GitHub 不保证在有人 Fork 时通知仓库作者。详见 [贡献说明](CONTRIBUTING.zh-CN.md) 与 [AI 修改规则](AI_RULES.zh-CN.md)。
+目前不公开项目邮箱。可使用 GitHub Issues 报告问题、使用 Discussions 交流；是否处理由项目作者决定。GitHub 不保证在有人 Fork 时通知仓库作者。详见 [贡献说明](docs/development/CONTRIBUTING.zh-CN.md) 与 [AI 修改规则](docs/development/AI_RULES.zh-CN.md)。
 
 ## 当前状态
 
