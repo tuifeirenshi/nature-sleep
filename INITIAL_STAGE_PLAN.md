@@ -1,15 +1,23 @@
-# 自然入眠：初步阶段执行计划
+# Archived Initial-Stage Plan
+
+This plan described an earlier development stage and is retained as historical context. Its version numbers, file paths, proposed steps, and completion criteria are not current instructions. Follow the current bilingual README and current source/license records instead. This archive does not describe the `v1.0.0` release.
+
+## 简体中文
+
+# 自然入眠：初步阶段执行计划（历史存档）
+
+本计划描述的是早期开发阶段，仅作为历史背景保留。文中的版本号、文件路径、拟定步骤和完成标准都不是当前指引。请以当前双语 README 和当前素材/授权记录为准。本存档不代表 `v1.0.0` 当前发布内容。
 
 这份计划只处理当前阶段：把 Android 版本做稳定，把结构整理成容易添加音景、修改界面和修复问题的形态。现在不必仓促决定代码许可证、收费方式、广告、Google Play、Windows、iOS 或 macOS 版本；但素材来源、许可类别和能否随公开源码/APK 再发布必须从现在开始核查和记录，不能等到上传前临时补。
 
-公开准备的素材授权盘点见 `ASSET_LICENSE_AUDIT.md`。该文件按当前网页预览列出七组音视频的来源缺口和公开前风险；APK 是否与网页素材完全一致需单独对照构建包。
+公开准备的素材授权盘点见 `ASSET_LICENSE_AUDIT.md` / `ASSET_LICENSE_AUDIT.zh-CN.md`。该文件按当前网页预览列出七组音视频的来源缺口和公开前风险；APK 是否与网页素材完全一致需单独对照构建包。
 
 ## 当前基线
 
 - 项目目录：`D:\codex\rain-sleep`
 - 电脑预览：双击 `打开雨林预览.cmd`
 - 预览地址：`http://127.0.0.1:8768`
-- 当前安装包：`dist\nature-sleep-v15.apk`（本次数据驱动音景清单版本）
+- 当前阶段记录中的安装包：早期预发布 APK（不代表当前 `v1.0.0`）
 - 构建脚本：`build.ps1`
 - 电脑界面和音景入口：`web\index.html`、`web\app.js`、`web\style.css`
 - Android 页面资源：构建时从 `web` 复制到 `android\package-assets`
@@ -25,7 +33,7 @@
 
 执行：
 
-1. 保留 `dist\nature-sleep-v14.apk`，不要覆盖它。
+1. 保留早期预发布 APK，不要覆盖历史测试文件。
 2. 建立只在本机使用的 Git 版本记录，并保存一个名字为 `v14-before-cleanup` 的检查点。Git 可以把它理解成代码的“存档点”：改坏时能找回之前状态；这里不会创建 GitHub 仓库，也不会上传代码。
 3. APK 和大型媒体文件继续单独备份，不要把它们每次的副本都塞进代码存档，避免存档迅速变得很大。
 4. 在电脑上启动预览，逐个点击 7 个音景，记录能否播放。
@@ -40,10 +48,10 @@
 
 执行：
 
-1. 以 `ASSET_LICENSE_AUDIT.md` 中的 7 组当前音景为清单，不要把 `web\media` 里所有旧素材都当成仍在使用。
+1. 以 `ASSET_LICENSE_AUDIT.md` / `ASSET_LICENSE_AUDIT.zh-CN.md` 中的 7 组当前音景为清单，不要把 `web\media` 里所有旧素材都当成仍在使用。
 2. 每个音景要登记视频和声音两项，也就是一共 14 个当前打包文件。每项找到原始素材页面、条目编号、作者、下载日期和下载时许可类别；把这些信息与文件 SHA-256、加工后的文件名及处理方式对应起来。审计文档里已有文件名和来源线索，但还没有凑齐 14 份下载证据。
 3. 分开记录两个问题：原媒体是否能放进公开源码仓库；原媒体是否能装入并公开分发 APK。仅仅可以商用/个人播放，不自动证明可以公开原始文件。
-4. 对当前找不到来源或许可证据不足的素材（尤其脑波助眠视频及 Mixkit 视频条款适用性），先在个人调试版本中标记待核实；公开下载版本只能使用来源明确且允许相应分发的素材，或取得书面许可。当前逐项状态见 `ASSET_LICENSE_AUDIT.md`。
+4. 对当前找不到来源或许可证据不足的素材（尤其脑波助眠视频及 Mixkit 视频条款适用性），先在个人调试版本中标记待核实；公开下载版本只能使用来源明确且允许相应分发的素材，或取得书面许可。当前逐项状态见 `ASSET_LICENSE_AUDIT.md` / `ASSET_LICENSE_AUDIT.zh-CN.md`。
 5. 重点核查音效许可是否覆盖本应用的离线 APK，音乐许可是否覆盖当前循环、淡入淡出处理和应用交付。若条款仍不清楚，应询问素材方或替换，不能靠猜。
 6. 保存下载当时的许可页面、条目页截图/PDF、许可文本版本和处理记录。之后即使网页变化，也能知道当时依据的条款。
 
@@ -175,7 +183,7 @@
 
 完成第 0 步：`TEST_LOG.md` 和可回退的 v14 APK。
 
-完成第 0.5 步：`ASSET_LICENSE_AUDIT.md` 中的来源证据和每项分发结论；不明素材有替换或书面确认方案。
+完成第 0.5 步：`ASSET_LICENSE_AUDIT.md` / `ASSET_LICENSE_AUDIT.zh-CN.md` 中的来源证据和每项分发结论；不明素材有替换或书面确认方案。
 
 完成第 1 步：`web\tracks.js`，增加音景不再改播放逻辑。
 

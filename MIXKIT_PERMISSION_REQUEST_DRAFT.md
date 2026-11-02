@@ -1,4 +1,8 @@
-# Mixkit 许可确认邮件草稿
+# Mixkit Permission Request Draft
+
+English | [简体中文](#简体中文)
+
+This is an unsent draft. Do not send it without the project owner's explicit approval. Replace the bracketed name, send it from the owner's own email, and preserve the sent message and any reply.
 
 这是一封待审核草稿。不要在没有项目持有人明确同意的情况下发送。
 
@@ -37,3 +41,11 @@ Regards,
 1. 先把方括号中的姓名补好。
 2. 从你自己的邮箱发送，并保存完整的发送内容、回复、日期和附件。
 3. 收到明确回复前，不要在公开仓库或公开下载页宣称 Mixkit 已书面批准本应用。
+
+## 简体中文
+
+这是一封尚未发送的草稿。没有项目持有人的明确同意，不要发送。发送前补好方括号中的姓名，使用项目持有人的邮箱发送，并保存完整的邮件和回复。
+
+建议收件地址：`terms@help.envato.com`。
+
+在收到明确回复前，不要在公开仓库或公开下载页宣称 Mixkit 已书面批准本应用。

@@ -48,6 +48,6 @@
 ## 当前结论
 
 - 已记录来源页面许可标记：**7 个音频 + 7 个视频**；许可标记不等于本项目所有公开分发方式都已确认。
-- Pexels 的 3 个视频已在真实浏览器中逐项核实作者、标题和 Free 许可。详细记录见 `PEXELS_BROWSER_VERIFICATION_2026-10-28.md`。
+- Pexels 的 3 个视频已在真实浏览器中逐项核实作者、标题和 Free 许可。详细记录见 `PEXELS_BROWSER_VERIFICATION_2026-10-28.zh-CN.md`。
 - Mixkit User Terms 仍包含类似或竞争产品/服务限制；当前产品用途是否适用属于尚未得到平台个案书面确认的判断。
-- 完整哈希和处理链见 `ASSET_LICENSE_AUDIT.md`、`MEDIA_PROVENANCE_CURRENT.md`、`CC0_AUDIO_SOURCES.md`。
+- 完整哈希和处理链见 `ASSET_LICENSE_AUDIT.zh-CN.md`、`MEDIA_PROVENANCE_CURRENT.zh-CN.md`、`CC0_AUDIO_SOURCES.zh-CN.md`。

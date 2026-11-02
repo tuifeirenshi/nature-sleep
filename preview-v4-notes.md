@@ -1,4 +1,15 @@
-# 预览修订
+# Preview Revision Notes
+
+English | [简体中文](#简体中文)
+
+These notes describe an older desktop-preview revision. They are historical and do not describe the current `v1.0.0` release or current seven-track source list.
+
+- Forest wind was removed and replaced by white noise in that preview.
+- The campfire recording and scene were changed in that preview.
+- The night-insects background used a moonlit forest clip in that preview.
+- The source was Mixkit; the notes said Android scene lists and notification names still needed synchronization before packaging.
+
+## 简体中文
 
 仅更新电脑预览，尚未生成新 APK。
 林间风声移除，以白噪音替代。白噪音为程序生成的 120 秒固定宽带噪声，低通 6500 Hz，目标响度 -23 LUFS。
