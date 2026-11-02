@@ -1,3 +1,5 @@
+[English](PEXELS_BROWSER_VERIFICATION_2026-10-28.md) | 简体中文
+
 # Pexels 条目浏览器核实记录
 
 核实日期：2026-10-28。以下页面通过真实浏览器打开，不是搜索摘要或猜测。

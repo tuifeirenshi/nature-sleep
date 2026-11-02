@@ -1,3 +1,5 @@
+[English](MEDIA_PROVENANCE_CURRENT.md) | 简体中文
+
 # 当前网页预览素材清单
 
 核查日期：2026-10-28

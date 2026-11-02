@@ -1,3 +1,5 @@
+English | [简体中文](AI_RULES.zh-CN.md)
+
 # AI and Automation Rules
 
 English | [简体中文](AI_RULES.zh-CN.md)

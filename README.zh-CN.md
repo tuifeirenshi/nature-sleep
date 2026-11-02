@@ -1,3 +1,5 @@
+[English](README.md) | 简体中文
+
 # 自然入眠
 
 [English](README.md) | 简体中文

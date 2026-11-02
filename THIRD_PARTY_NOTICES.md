@@ -1,3 +1,5 @@
+English | [简体中文](THIRD_PARTY_NOTICES.zh-CN.md)
+
 # Third-Party Notices
 
 English | [简体中文](THIRD_PARTY_NOTICES.zh-CN.md)

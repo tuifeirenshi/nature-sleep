@@ -1,3 +1,5 @@
+English | [简体中文](ASSET_LICENSE_AUDIT.zh-CN.md)
+
 # Audio and Video License Audit
 
 English | [简体中文](ASSET_LICENSE_AUDIT.zh-CN.md)

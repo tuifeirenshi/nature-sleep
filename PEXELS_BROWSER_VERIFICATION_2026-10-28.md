@@ -1,3 +1,5 @@
+English | [简体中文](PEXELS_BROWSER_VERIFICATION_2026-10-28.zh-CN.md)
+
 # Pexels Browser Verification Record
 
 English | [简体中文](PEXELS_BROWSER_VERIFICATION_2026-10-28.zh-CN.md)

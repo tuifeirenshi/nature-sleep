@@ -1,3 +1,5 @@
+[English](CONTRIBUTING.md) | 简体中文
+
 # 贡献说明
 
 [English](CONTRIBUTING.md) | 简体中文

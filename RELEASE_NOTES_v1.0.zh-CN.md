@@ -1,3 +1,5 @@
+[English](RELEASE_NOTES_v1.0.md) | 简体中文
+
 # 自然入眠 v1.0.0
 
 [English](RELEASE_NOTES_v1.0.md) | 简体中文

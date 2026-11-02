@@ -1,3 +1,5 @@
+English | [简体中文](MEDIA_PROVENANCE_CURRENT.zh-CN.md)
+
 # Current Media Provenance
 
 English | [简体中文](MEDIA_PROVENANCE_CURRENT.zh-CN.md)

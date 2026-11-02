@@ -1,3 +1,5 @@
+[English](ASSET_LICENSE_AUDIT.md) | 简体中文
+
 # 当前音视频素材授权审计
 
 核查日期：2026-10-28

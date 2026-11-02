@@ -1,3 +1,5 @@
+[English](THIRD_PARTY_NOTICES.md) | 简体中文
+
 # 第三方素材说明
 
 [English](THIRD_PARTY_NOTICES.md) | 简体中文

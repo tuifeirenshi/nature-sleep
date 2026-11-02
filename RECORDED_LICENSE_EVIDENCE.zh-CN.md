@@ -1,3 +1,5 @@
+[English](RECORDED_LICENSE_EVIDENCE.md) | 简体中文
+
 # 已记录的素材许可依据
 
 核查日期：2026-10-28  

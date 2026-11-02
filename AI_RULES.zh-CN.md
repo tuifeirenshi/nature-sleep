@@ -1,3 +1,5 @@
+[English](AI_RULES.md) | 简体中文
+
 # AI 与自动化修改规则
 
 [English](AI_RULES.md) | 简体中文

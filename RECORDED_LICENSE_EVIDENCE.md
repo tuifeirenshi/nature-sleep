@@ -1,3 +1,5 @@
+English | [简体中文](RECORDED_LICENSE_EVIDENCE.zh-CN.md)
+
 # Recorded License Evidence
 
 English | [简体中文](RECORDED_LICENSE_EVIDENCE.zh-CN.md)

@@ -1,3 +1,5 @@
+English | [简体中文](RELEASE_NOTES_v1.0.zh-CN.md)
+
 # Nature Sleep v1.0.0
 
 English | [简体中文](RELEASE_NOTES_v1.0.zh-CN.md)

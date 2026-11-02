@@ -1,3 +1,5 @@
+English | [简体中文](#简体中文)
+
 # Archived Initial-Stage Plan
 
 This plan described an earlier development stage and is retained as historical context. Its version numbers, file paths, proposed steps, and completion criteria are not current instructions. Follow the current bilingual README and current source/license records instead. This archive does not describe the `v1.0.0` release.

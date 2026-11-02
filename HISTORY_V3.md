@@ -1,3 +1,5 @@
+English | [简体中文](#简体中文)
+
 # Historical Version 3 Notes
 
 English | [简体中文](#简体中文)
