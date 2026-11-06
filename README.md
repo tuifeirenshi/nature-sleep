@@ -8,11 +8,13 @@ Nature Sleep is a personal experimental Android sound player with seven soundsca
 
 ![Desktop preview (web preview)](docs/screenshots/v1.0-desktop.png)
 
+These screenshots show the v1.0 web preview; the current interface may differ.
+
 This is a **source-available project**, not a project distributed under a standard open-source code license. The public repository can be viewed and forked on GitHub. No additional permission is granted for copying, modifying, commercial use, or redistribution of the code outside GitHub's platform permissions. Third-party media and icons remain subject to their own licenses. Forks, modified builds, and personal builds are not official releases.
 
 ## Preview and Installation
 
-- Desktop preview: on Windows, double-click `open-preview.cmd`, then visit `http://127.0.0.1:8768/`.
+- Desktop preview: install Node.js and make `node` available on PATH. On Windows, double-click `open-preview.cmd` to open `http://127.0.0.1:8768/` in the default browser.
 - Android: download `nature-sleep-v1.0.1.apk` from [GitHub Releases](https://github.com/tuifeirenshi/nature-sleep/releases). Its Android version name is `1.0.1`.
 - Android 8.0 or later; phones and tablets are supported. Background behavior may vary with device-specific battery management.
 
@@ -30,7 +32,14 @@ git lfs ls-files
 
 The last command should list 14 current audio/video files. If media is missing, check that `git lfs pull` succeeded and that `web/media/` contains the actual files rather than small LFS pointer text files.
 
-The Android app uses the official Android Gradle Plugin and Gradle Wrapper. Install JDK 21, Android SDK Platform 35, Build Tools 35.0.0, and FFmpeg with libx264 on PATH; set `JAVA_HOME` and `ANDROID_SDK_ROOT`. Run `./build.ps1` in PowerShell to create a signed release APK. It creates separate 4K H.264 video copies targeting 9 Mbps; the campfire uses 30 fps and other frame rates are retained. Web source media is unchanged. The Gradle 8.9 wrapper verifies its download SHA-256. Signing credentials remain local; use `tools/signing.example.properties` as the template for the ignored local file. Losing the signing key can prevent updates.
+The Android app uses the official Android Gradle Plugin and Gradle Wrapper. On Windows, install Node.js, JDK 21, Android SDK Platform 35, Build Tools 35.0.0, and FFmpeg with libx264 on PATH; set `JAVA_HOME` and `ANDROID_SDK_ROOT`. To sign a release, first create the ignored `tools/signing.local.properties` from `tools/signing.example.properties` and provide your own keystore and credentials. Without signing configuration the release APK is unsigned. Run `.\build.ps1` in PowerShell. It creates separate 4K H.264 video copies targeting 9 Mbps; the campfire uses 30 fps and other frame rates are retained. Web source media is unchanged. The Gradle 8.9 wrapper verifies its download SHA-256. Keep signing credentials private; losing the signing key can prevent updates.
+
+## Repository Guide
+
+- `web/`: player interface and current media; `android/`: Android app and media controls.
+- `scripts/`: video preparation and local preview; `docs/`: licensing, media, release and development records.
+- `tools/`: checks and historical media/QA experiments. Some older scripts contain machine-specific paths and are not portable; do not assume they apply to the current version.
+- `docs/archive/`: historical notes, not current instructions.
 
 ## Media, Contributions, and Status
 

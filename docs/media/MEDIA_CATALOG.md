@@ -6,6 +6,8 @@ Audit date: 2026-10-28. This catalog describes the 14 files used by the current 
 
 ## Current Web Playlist Files
 
+The source-file paths in this table, including `tools/cc0-audio/` and `tools/moon-detail.mp4`, refer to the author's local copies and are not included in the public repository. The current playback files under `web/media/` are tracked with Git LFS.
+
 | Track | Video file / SHA-256 | Recorded video metadata and source reference | Audio output / SHA-256 | Retained source file / SHA-256 | Recorded processing/provenance |
 |---|---|---|---|---|---|
 | Rainforest | `web/media/rain-loop4k.mp4`<br>`65427242CD317E93D694111BB94B871ACA4AD09961BA1F9EAF61BA211033C20` | Mixkit item 22728; title “Raining in a cloud forest full of tall trees.” | `web/media/rain-jungle-balanced.wav`<br>`0C3A05F8086E66F4B0172C4BF1C322BFE7AFEC3181FAA7A6768135512AFADF5A` | `tools/cc0-audio/replacements/rain-jungle-online.mp3`<br>`CCC718A44325BF104510B694C9D94937A56C2417C777C8781B4DC53B0E54A91C` | Source MP3 hash matches the 2026-10-27 record; WAV output hash matches the current main record. |
@@ -32,7 +34,7 @@ The three current Pexels files were recorded as hash-matching local copies saved
 
 `tools/process-cc0-audio.cjs` documents 44.1 kHz, stereo PCM WAV, 120 seconds, loudness normalization, and 3-second fades/loop crossfades. It does not reproduce all current outputs. Five current output WAV hashes (Waves, Stream, Night insects, Campfire, and Sleep music) differ from older records; some source-file mappings also differ. Do not present old hashes as current output hashes.
 
-Current source candidates are retained under `tools/cc0-audio/`; current playback WAVs are under `web/media/`. Existing records associate the source files with Freesound items; the Rainforest page was automatically rechecked and displayed “Creative Commons 0.” Saved copies of each source page and reproducible processing records for five outputs are still missing. Filenames and hashes alone do not establish source or license.
+Source candidates were retained locally under `tools/cc0-audio/` and are not in the public repository; current playback WAVs are under `web/media/`. Existing records associate the source files with Freesound items; the Rainforest page was automatically rechecked and displayed “Creative Commons 0.” Saved copies of each source page and reproducible processing records for five outputs are still missing. Filenames and hashes alone do not establish source or license.
 
 ## Icon Source Files
 
@@ -51,9 +53,9 @@ This draft was moved here from a separate file because it is project corresponde
 ```text
 Hello,
 
-I am developing a free Android sleep-sound player called Rain Sleep. It bundles seven Mixkit Stock Video Free clips as background visuals for seven audio scenes.
+I am developing a free Android sound player called Nature Sleep. It bundles four Mixkit Stock Video Free clips as background visuals for four of its seven audio scenes; the other three videos come from Pexels.
 
-The app does not provide stock-media search, downloads, licensing, or a media library. Users only play the finished scenes in the app. The videos are modified only by cropping, looping, and fade transitions, and are distributed inside the APK. The project may later be shared as source code for personal and open-source development.
+The app does not provide stock-media search, downloads, licensing, or a media library. Users play the finished scenes in the app. The videos are transcoded for the APK, may be displayed cropped and looped, and use fade transitions. The APK and source repository are publicly distributed, including the video files in Git LFS.
 
 Is this use permitted under the Mixkit Stock Video Free License and User Terms, including the restriction against using an Item to build a “similar or competitive product or service”? Is attribution optional for this use? Please confirm whether distributing the finished APK and the corresponding source project to users is allowed.
 
@@ -62,10 +64,7 @@ The current clip pages are:
 - https://mixkit.co/free-stock-video/rainforest-22728/
 - https://mixkit.co/free-stock-video/waves-coming-to-the-beach-5016/
 - https://mixkit.co/free-stock-video/flying-over-a-relaxing-creek-full-of-rock-on-the-51585/
-- https://mixkit.co/free-stock-video/starry-sky-framed-by-trees-100824/
-- https://mixkit.co/free-stock-video/campfire-burning-wood-logs-in-the-dark-22730/
-- https://mixkit.co/free-stock-video/moon-in-the-sky-a-snowy-forest-3350/
-- https://mixkit.co/free-stock-video/abstract-video-of-a-liquid-with-dark-ink-flowing-44818/
+- https://mixkit.co/free-stock-video/moon-detail-40047/
 
 Thank you.
 

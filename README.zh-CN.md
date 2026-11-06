@@ -8,11 +8,13 @@
 
 ![电脑预览界面（网页预览）](docs/screenshots/v1.0-desktop.png)
 
+以上截图为 v1.0 网页预览，当前界面可能有所不同。
+
 这是一个**公开源码项目**，不是采用标准开源许可证的项目。公开仓库允许在 GitHub 内查看和 Fork；项目当前没有授予平台外复制、修改、商用或再发布代码的许可。第三方音视频和图标分别依其自身许可证使用。Fork、改版和个人构建不代表官方版本。
 
 ## 预览与安装
 
-- 电脑预览：Windows 上双击 `open-preview.cmd`；浏览器打开 `http://127.0.0.1:8768/`。
+- 电脑预览：先安装 Node.js 并确保 `node` 在 PATH 中；Windows 上双击 `open-preview.cmd`，即可用默认浏览器打开 `http://127.0.0.1:8768/`。
 - Android：从 [GitHub Releases](https://github.com/tuifeirenshi/nature-sleep/releases) 下载 `nature-sleep-v1.0.1.apk`，应用版本为 `1.0.1`。
 - Android 8.0 及以上；支持手机和平板。后台播放由 Android 通知控制；实际后台行为可能受设备厂商的省电设置影响。
 
@@ -32,13 +34,20 @@ git lfs ls-files
 
 ## 构建 Android APK
 
-Android 应用通过 Gradle Wrapper 和官方 Android Gradle Plugin 构建。需要 JDK 21、Android SDK Platform 35、Build Tools 35.0.0 和 PATH 中提供 libx264 的 FFmpeg，并设置 `JAVA_HOME` 与 `ANDROID_SDK_ROOT`。运行 `build.ps1` 会先为 APK 生成独立的 4K H.264 视频副本，目标平均码率 9 Mbps，篝火为 30 帧/秒，其余帧率保持原样；网页原素材不变。Wrapper 使用 Gradle 8.9 并校验下载的 SHA-256。签名凭据仅保存在本机，不得提交到 Git；配置方法见 `tools/signing.example.properties`。
+Android 应用通过 Gradle Wrapper 和官方 Android Gradle Plugin 构建。Windows 上需要 Node.js、JDK 21、Android SDK Platform 35、Build Tools 35.0.0 和 PATH 中提供 libx264 的 FFmpeg，并设置 `JAVA_HOME` 与 `ANDROID_SDK_ROOT`。运行 `build.ps1` 会先为 APK 生成独立的 4K H.264 视频副本，目标平均码率 9 Mbps，篝火为 30 帧/秒，其余帧率保持原样；网页原素材不变。Wrapper 使用 Gradle 8.9 并校验下载的 SHA-256。
 
 ```powershell
 .\build.ps1
 ```
 
-签名密钥及密码仅保存在本机，不提交到 Git。首次在另一台电脑构建时，需自行配置 `tools/signing.local.properties`，格式参考 `tools/signing.example.properties`。不要把真实签名密钥或密码发送给他人或上传到仓库。遗失签名密钥会影响后续为同一应用签名更新。
+签名密钥及密码仅保存在本机，不提交到 Git。要生成已签名版本，运行脚本前需自行配置 `tools/signing.local.properties` 和自己的密钥，格式参考 `tools/signing.example.properties`；未配置时生成的是未签名版本。不要把真实签名密钥或密码发送给他人或上传到仓库。遗失签名密钥会影响后续为同一应用签名更新。
+
+## 仓库目录
+
+- `web/`：播放器界面和当前素材；`android/`：安卓应用和媒体控制。
+- `scripts/`：视频处理和本地预览；`docs/`：许可、素材、发布及开发记录。
+- `tools/`：检查工具及历史素材处理、测试脚本。部分旧脚本写死了本机路径，不能直接在其他电脑使用，也不一定适用于当前版本。
+- `docs/archive/`：历史笔记，不是当前操作说明。
 
 ## 素材与授权
 

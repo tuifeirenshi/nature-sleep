@@ -43,6 +43,8 @@ tools/temp/
 
 # The web directory keeps only the seven media pairs used by tracks.js.
 web/media/*
+!web/media/covers/
+!web/media/covers/*.jpg
 
 # Local logs and editor/system files
 *.log

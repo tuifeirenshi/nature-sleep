@@ -6,6 +6,8 @@
 
 ## 当前网页清单文件
 
+表中的来源文件路径（包括 `tools/cc0-audio/` 和 `tools/moon-detail.mp4`）指作者本机留存副本，未包含在公开仓库中。`web/media/` 中的当前播放文件通过 Git LFS 跟踪。
+
 | 音景 | 视频文件 / SHA-256 | 已记录的视频元数据与来源 | 音频成品 / SHA-256 | 留存来源文件 / SHA-256 | 已记录的处理/来源信息 |
 |---|---|---|---|---|---|
 | 热带雨林 | `web/media/rain-loop4k.mp4`<br>`65427242CD317E93D694111BB94B871ACA4AD09961BA1F9EAF61BA211033C20` | Mixkit 条目 22728；标题 “Raining in a cloud forest full of tall trees”。 | `web/media/rain-jungle-balanced.wav`<br>`0C3A05F8086E66F4B0172C4BF1C322BFE7AFEC3181FAA7A6768135512AFADF5A` | `tools/cc0-audio/replacements/rain-jungle-online.mp3`<br>`CCC718A44325BF104510B694C9D94937A56C2417C777C8781B4DC53B0E54A91C` | 来源 MP3 哈希与 2026-10-27 记录相符；WAV 成品哈希与当前主记录相符。 |
@@ -34,7 +36,7 @@
 
 `tools/process-cc0-audio.cjs` 记录了 44.1 kHz、双声道 PCM WAV、120 秒、响度归一化及 3 秒淡入淡出/循环交叉淡化。但它不能复现所有当前成品：海浪、溪流、夜间虫鸣、篝火和助眠音乐五条 WAV 的当前哈希与早期记录不同，且部分来源文件映射也有差异。不要把旧哈希说成当前成品哈希。
 
-目前来源候选文件保存在 `tools/cc0-audio/`，当前播放 WAV 保存在 `web/media/`。既有记录将来源对应到 Freesound 条目；雨林条目页曾经自动复核并显示“Creative Commons 0”。五条成品缺少可复现的处理记录，且各来源页的保存副本仍不齐全。不能只凭文件名判断来源或许可。
+来源候选文件曾保存在作者本机的 `tools/cc0-audio/`，未包含在公开仓库中；当前播放 WAV 保存在 `web/media/`。既有记录将来源对应到 Freesound 条目；雨林条目页曾经自动复核并显示“Creative Commons 0”。五条成品缺少可复现的处理记录，且各来源页的保存副本仍不齐全。不能只凭文件名判断来源或许可。
 
 旧版音频来源文档混合了多个替换批次，包括条目 765980、635104、446019、750874、588401、867839 和 75309，以及多个 WAV 哈希。除上表实际映射到当前文件的来源外，其余仅供历史追查，不属于当前来源清单。旧的双耳节拍音频也不是当前网页音频。
 
@@ -53,9 +55,9 @@
 ```text
 Hello,
 
-I am developing a free Android sleep-sound player called Rain Sleep. It bundles seven Mixkit Stock Video Free clips as background visuals for seven audio scenes.
+I am developing a free Android sound player called Nature Sleep. It bundles four Mixkit Stock Video Free clips as background visuals for four of its seven audio scenes; the other three videos come from Pexels.
 
-The app does not provide stock-media search, downloads, licensing, or a media library. Users only play the finished scenes in the app. The videos are modified only by cropping, looping, and fade transitions, and are distributed inside the APK. The project may later be shared as source code for personal and open-source development.
+The app does not provide stock-media search, downloads, licensing, or a media library. Users play the finished scenes in the app. The videos are transcoded for the APK, may be displayed cropped and looped, and use fade transitions. The APK and source repository are publicly distributed, including the video files in Git LFS.
 
 Is this use permitted under the Mixkit Stock Video Free License and User Terms, including the restriction against using an Item to build a “similar or competitive product or service”? Is attribution optional for this use? Please confirm whether distributing the finished APK and the corresponding source project to users is allowed.
 
@@ -64,10 +66,7 @@ The current clip pages are:
 - https://mixkit.co/free-stock-video/rainforest-22728/
 - https://mixkit.co/free-stock-video/waves-coming-to-the-beach-5016/
 - https://mixkit.co/free-stock-video/flying-over-a-relaxing-creek-full-of-rock-on-the-51585/
-- https://mixkit.co/free-stock-video/starry-sky-framed-by-trees-100824/
-- https://mixkit.co/free-stock-video/campfire-burning-wood-logs-in-the-dark-22730/
-- https://mixkit.co/free-stock-video/moon-in-the-sky-a-snowy-forest-3350/
-- https://mixkit.co/free-stock-video/abstract-video-of-a-liquid-with-dark-ink-flowing-44818/
+- https://mixkit.co/free-stock-video/moon-detail-40047/
 
 Thank you.
 

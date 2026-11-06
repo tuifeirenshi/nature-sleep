@@ -7,4 +7,4 @@ if (!$available) {
     Start-Process -FilePath $node -ArgumentList ('"' + (Join-Path $PSScriptRoot 'server.cjs') + '"') -WorkingDirectory $projectRoot -WindowStyle Hidden
     Start-Sleep -Seconds 2
 }
-Start-Process -FilePath 'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe' -ArgumentList '--new-window http://127.0.0.1:8768'
+Start-Process 'http://127.0.0.1:8768/'
