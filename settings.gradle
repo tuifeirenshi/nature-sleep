@@ -1,0 +1,24 @@
+pluginManagement {
+    repositories {
+        // Use mirrors first for reliable downloads; keep the canonical repositories as fallbacks.
+        maven { url = uri("https://maven.aliyun.com/repository/google") }
+        maven { url = uri("https://maven.aliyun.com/repository/public") }
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        maven { url = uri("https://maven.aliyun.com/repository/google") }
+        maven { url = uri("https://maven.aliyun.com/repository/public") }
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.name = "rain-sleep"
+include(":app")
+project(":app").projectDir = file("android")

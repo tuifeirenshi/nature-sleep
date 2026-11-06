@@ -17,7 +17,7 @@ This plan described an earlier development stage and is retained as historical c
 ## 当前基线
 
 - 项目目录：`D:\codex\rain-sleep`
-- 电脑预览：双击 `打开雨林预览.cmd`
+- 电脑预览：双击 `open-preview.cmd`
 - 预览地址：`http://127.0.0.1:8768`
 - 当前阶段记录中的安装包：早期预发布 APK（不代表当前 `v1.0.0`）
 - 构建脚本：`build.ps1`

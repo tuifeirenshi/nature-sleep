@@ -12,8 +12,8 @@
 
 ## 预览与安装
 
-- 电脑预览：Windows 上双击 `打开雨林预览.cmd`；浏览器打开 `http://127.0.0.1:8768/`。
-- Android：从 GitHub Releases 下载 `nature-sleep-v1.0.apk`。这是首次公开的全新安装包，应用内部版本名为 `1.0.0`。
+- 电脑预览：Windows 上双击 `open-preview.cmd`；浏览器打开 `http://127.0.0.1:8768/`。
+- Android：从 [GitHub Releases](https://github.com/tuifeirenshi/nature-sleep/releases) 下载 `nature-sleep-v1.0.1.apk`，应用版本为 `1.0.1`。
 - Android 8.0 及以上；支持手机和平板。后台播放由 Android 通知控制；实际后台行为可能受设备厂商的省电设置影响。
 
 ## 从源码运行
@@ -32,10 +32,10 @@ git lfs ls-files
 
 ## 构建 Android APK
 
-构建依赖 PowerShell、Java 21、Node.js、Android SDK Platform 35 与 Android Build Tools 35.0.0。SDK 构建工具不包含在 Git 仓库中；当前脚本从 `tools/plat/android-35` 和 `tools/bt/android-15` 读取它们，首次构建前需通过 Android Studio SDK Manager 安装后放置到这些目录。运行：
+Android 应用通过 Gradle Wrapper 和官方 Android Gradle Plugin 构建。需要 JDK 21、Android SDK Platform 35、Build Tools 35.0.0 和 PATH 中提供 libx264 的 FFmpeg，并设置 `JAVA_HOME` 与 `ANDROID_SDK_ROOT`。运行 `build.ps1` 会先为 APK 生成独立的 4K H.264 视频副本，目标平均码率 9 Mbps，篝火为 30 帧/秒，其余帧率保持原样；网页原素材不变。Wrapper 使用 Gradle 8.9 并校验下载的 SHA-256。签名凭据仅保存在本机，不得提交到 Git；配置方法见 `tools/signing.example.properties`。
 
 ```powershell
-\.\build.ps1
+.\build.ps1
 ```
 
 签名密钥及密码仅保存在本机，不提交到 Git。首次在另一台电脑构建时，需自行配置 `tools/signing.local.properties`，格式参考 `tools/signing.example.properties`。不要把真实签名密钥或密码发送给他人或上传到仓库。遗失签名密钥会影响后续为同一应用签名更新。

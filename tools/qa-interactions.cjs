@@ -1,4 +1,6 @@
 const {chromium}=require('C:/Users/29213/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const trackButton=id=>`[data-track="${id}"]:not([data-clone])`;
+const clickTrack=(page,id)=>page.evaluate(id=>document.querySelector(`[data-track="${id}"]:not([data-clone])`).click(),id);
 
 (async()=>{
   const browser=await chromium.launch({channel:'msedge',headless:true});
@@ -36,7 +38,7 @@ const {chromium}=require('C:/Users/29213/.cache/codex-runtimes/codex-primary-run
     const intervals=await page.evaluate(()=>window.__intervalCalls);
     if(intervals!==1) throw Error(`nativeState registered ${intervals} timer intervals`);
 
-    await page.click('[data-track="waves"]');
+    await clickTrack(page,'waves');
     await page.waitForFunction(()=>selected.id==='waves'&&!videoLoading);
     if(!(await page.evaluate(()=>films[active].paused))) throw Error('paused track switch started the video');
 
@@ -45,9 +47,9 @@ const {chromium}=require('C:/Users/29213/.cache/codex-runtimes/codex-primary-run
     await page.evaluate(()=>setMinimal(false));
     await page.waitForFunction(()=>!videoLoading);
 
-    await page.click('[data-track="waves"]');
-    await page.click('[data-track="stream"]');
-    await page.click('[data-track="campfire"]');
+    await clickTrack(page,'waves');
+    await clickTrack(page,'stream');
+    await clickTrack(page,'campfire');
     await page.waitForFunction(()=>selected.id==='campfire'&&!videoLoading);
     if(!(await page.evaluate(()=>films[active].currentSrc.endsWith('/media/campfire-close.mp4')))) throw Error('rapid paused track switches left the wrong video active');
 
@@ -55,13 +57,15 @@ const {chromium}=require('C:/Users/29213/.cache/codex-runtimes/codex-primary-run
       const current=films[active],alternate=films[1-active];
       current.style.transition='opacity 600ms';current.style.opacity='.4';
       alternate.style.transition='opacity 600ms';alternate.style.opacity='.6';blend=true;
-      selected=tracks.find(t=>t.id==='forest-night');
-      window.__interruptedBackground=setBackground();
+      window.__interruptedBackground=selectTrack('forest-night');
     });
     const interruptedOpacity=await page.evaluate(()=>({current:films[active].style.opacity,alternate:films[1-active].style.opacity}));
     if(interruptedOpacity.current!=='1'||interruptedOpacity.alternate!=='0') throw Error('interrupting the video loop fade left the scene dimmed');
     await page.evaluate(()=>window.__interruptedBackground);
-    await page.waitForFunction(()=>!videoLoading&&films[active].currentSrc.endsWith('/media/summer-night4k.mp4'));
+    await page.waitForFunction(()=>!videoLoading&&films[active].currentSrc===new URL(tracks.find(track=>track.id==='forest-night').video,document.baseURI).href,{timeout:16000}).catch(async error=>{
+      const state=await page.evaluate(()=>({selected:selected.id,active,videoLoading,videos:films.map(video=>({src:video.currentSrc,readyState:video.readyState,error:video.error?.code,paused:video.paused,opacity:video.style.opacity}))}));
+      throw Error(`${error.message}; video state: ${JSON.stringify(state)}`);
+    });
 
     await page.click('#timerToggle');
     await page.click('[data-min="15"]');
@@ -72,21 +76,23 @@ const {chromium}=require('C:/Users/29213/.cache/codex-runtimes/codex-primary-run
     await page.waitForFunction(()=>!playing&&deadline===0&&chosen===0);
     await page.click('#play');
     await page.waitForFunction(()=>playing&&!loading);
-    await page.click('[data-track="stream"]');
-    const interruptible=await page.locator('[data-track="campfire"]').isEnabled();
+    await clickTrack(page,'stream');
+    const interruptible=await page.locator(trackButton('campfire')).isEnabled();
     if(!interruptible) throw Error('track buttons were disabled during audio crossfade');
     await page.waitForFunction(()=>sources.length>=2);
-    await page.click('[data-track="campfire"]');
+    await clickTrack(page,'campfire');
     await page.waitForFunction(()=>selected.id==='campfire'&&playing&&!loading);
     await page.waitForFunction(()=>sources.length>=2);
     if(!(await page.evaluate(()=>sources.length>=2))) throw Error('audio switch did not overlap old and new sources');
     const fadeSeconds=await page.evaluate(()=>sources.at(-1).fadeEnd-sources.at(-1).fadeStart);
-    if(Math.abs(fadeSeconds-.7)>.05) throw Error(`audio handoff fade was ${fadeSeconds}s, expected 0.7s`);
+    const expectedFade=await page.evaluate(()=>SWITCH_FADE_SECONDS);
+    if(Math.abs(fadeSeconds-expectedFade)>.05) throw Error(`audio handoff fade was ${fadeSeconds}s, expected ${expectedFade}s`);
     await page.waitForFunction(()=>!videoLoading);
     if(await page.evaluate(()=>films[active].paused)) throw Error('interrupted track switch left the video paused');
     const cacheSize=await page.evaluate(()=>buffers.size);
     if(cacheSize>2) throw Error(`audio decode cache grew to ${cacheSize} tracks`);
 
+    await page.click('#timerToggle');
     await page.click('[data-min="15"]');
     await page.waitForFunction(()=>chosen===15&&deadline>0);
     const deadlineBefore=await page.evaluate(()=>deadline);

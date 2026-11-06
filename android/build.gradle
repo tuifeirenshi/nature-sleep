@@ -1,0 +1,88 @@
+plugins {
+    id "com.android.application"
+}
+
+def webRoot = rootProject.file("web")
+def packageAssets = project.file("package-assets")
+def compressedVideoRoot = project.layout.buildDirectory.dir("compressed-video-4k-9m")
+def videoNames = ["rain-loop4k.mp4", "waves-4k.mp4", "stream-clear.mp4", "summer-night4k.mp4", "campfire-close.mp4", "music-moon.mp4", "binaural-calm-light.mp4"]
+def signingFile = rootProject.file("tools/signing.local.properties")
+def signingValues = new Properties()
+if (signingFile.isFile()) {
+    signingFile.withInputStream { signingValues.load(it) }
+}
+
+android {
+    namespace "com.rainsleep.app"
+    compileSdk 35
+    buildToolsVersion "35.0.0"
+
+    defaultConfig {
+        applicationId "com.rainsleep.app"
+        minSdk 26
+        targetSdk 35
+        versionCode 10002
+        versionName "1.0.1"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            if (signingValues.getProperty("keystorePath")) {
+                signingConfig signingConfigs.maybeCreate("release")
+                signingConfig.storeFile = rootProject.file(signingValues.getProperty("keystorePath"))
+                signingConfig.storePassword = signingValues.getProperty("storePassword")
+                signingConfig.keyAlias = signingValues.getProperty("keyAlias", "rainsleep")
+                signingConfig.keyPassword = signingValues.getProperty("keyPassword")
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile "AndroidManifest.xml"
+            java.srcDirs = ["src"]
+            res.srcDirs = ["res"]
+            assets.srcDirs = ["package-assets"]
+        }
+    }
+}
+
+tasks.register("syncWebAssets", Sync) {
+    into(packageAssets)
+    from(webRoot) {
+        include("index.html", "app.js", "tracks.js", "i18n.js", "style.css", "responsive.css", "lucide.js", "leaf.svg", "liquid-glass.js")
+    }
+    from(new File(webRoot, "media/covers")) {
+        include("*.jpg")
+        into("media/covers")
+    }
+    from(compressedVideoRoot) {
+        include(videoNames)
+        into("media")
+    }
+    from(new File(webRoot, "media")) {
+        include("rain-jungle-balanced.wav", "waves-balanced.wav", "stream-balanced.wav", "forest-night-balanced.wav", "campfire-balanced.wav", "sleep-music-balanced.wav", "brainwave-balanced.wav")
+        into("media")
+    }
+}
+
+tasks.named("syncWebAssets").configure {
+    doFirst {
+        def root = compressedVideoRoot.get().asFile
+        videoNames.each { name ->
+            def video = new File(root, name)
+            def source = new File(webRoot, "media/${name}")
+            if (!video.isFile() || video.lastModified() < source.lastModified()) {
+                throw new GradleException("Compressed video missing or older than source: ${name}. Run build.ps1 to prepare videos.")
+            }
+        }
+    }
+}
+
+tasks.named("preBuild").configure { dependsOn("syncWebAssets") }

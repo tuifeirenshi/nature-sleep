@@ -12,8 +12,8 @@ This is a **source-available project**, not a project distributed under a standa
 
 ## Preview and Installation
 
-- Desktop preview: on Windows, double-click `打开雨林预览.cmd`, then visit `http://127.0.0.1:8768/`.
-- Android: download `nature-sleep-v1.0.apk` from GitHub Releases. This is the first public, fresh-install package; its Android version name is `1.0.0`.
+- Desktop preview: on Windows, double-click `open-preview.cmd`, then visit `http://127.0.0.1:8768/`.
+- Android: download `nature-sleep-v1.0.1.apk` from [GitHub Releases](https://github.com/tuifeirenshi/nature-sleep/releases). Its Android version name is `1.0.1`.
 - Android 8.0 or later; phones and tablets are supported. Background behavior may vary with device-specific battery management.
 
 ## Source and Build
@@ -30,7 +30,7 @@ git lfs ls-files
 
 The last command should list 14 current audio/video files. If media is missing, check that `git lfs pull` succeeded and that `web/media/` contains the actual files rather than small LFS pointer text files.
 
-The Android build requires PowerShell, Java 21, Node.js, Android SDK Platform 35, and Android Build Tools 35.0.0. SDK build tools are not included in Git; the current script reads them from `tools/plat/android-35` and `tools/bt/android-15`. Install them with Android Studio SDK Manager and place them in those directories before building. Run `./build.ps1` in PowerShell. Signing credentials remain local and must not be committed. Use `tools/signing.example.properties` as a template for the ignored local file `tools/signing.local.properties`. Losing the signing key can prevent updates signed as the same app.
+The Android app uses the official Android Gradle Plugin and Gradle Wrapper. Install JDK 21, Android SDK Platform 35, Build Tools 35.0.0, and FFmpeg with libx264 on PATH; set `JAVA_HOME` and `ANDROID_SDK_ROOT`. Run `./build.ps1` in PowerShell to create a signed release APK. It creates separate 4K H.264 video copies targeting 9 Mbps; the campfire uses 30 fps and other frame rates are retained. Web source media is unchanged. The Gradle 8.9 wrapper verifies its download SHA-256. Signing credentials remain local; use `tools/signing.example.properties` as the template for the ignored local file. Losing the signing key can prevent updates.
 
 ## Media, Contributions, and Status
 
