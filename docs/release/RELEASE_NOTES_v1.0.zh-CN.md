@@ -2,8 +2,6 @@
 
 # 自然入眠 v1.0.0
 
-[English](RELEASE_NOTES_v1.0.md) | 简体中文
-
 这是自然入眠的首次公开安装版本，适用于 Android 8.0 及以上手机和平板。APK 文件：`nature-sleep-v1.0.apk`。
 
 ## 包含内容

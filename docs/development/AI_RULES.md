@@ -2,8 +2,6 @@ English | [简体中文](AI_RULES.zh-CN.md)
 
 # AI and Automation Rules
 
-English | [简体中文](AI_RULES.zh-CN.md)
-
 When an AI assistant, script, or automation modifies this project:
 
 - Read the README, relevant modules, and current Git state first; preserve uncommitted work.

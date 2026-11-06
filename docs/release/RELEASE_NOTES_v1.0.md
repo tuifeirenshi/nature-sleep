@@ -2,8 +2,6 @@ English | [简体中文](RELEASE_NOTES_v1.0.zh-CN.md)
 
 # Nature Sleep v1.0.0
 
-English | [简体中文](RELEASE_NOTES_v1.0.zh-CN.md)
-
 This is the first public release of Nature Sleep for Android 8.0 or later on phones and tablets. APK: `nature-sleep-v1.0.apk`.
 
 ## Included

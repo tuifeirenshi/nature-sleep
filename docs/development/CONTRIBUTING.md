@@ -2,8 +2,6 @@ English | [简体中文](CONTRIBUTING.zh-CN.md)
 
 # Contributing
 
-English | [简体中文](CONTRIBUTING.zh-CN.md)
-
 Issues, suggestions, and Pull Requests are welcome. The project author makes no promise about review, response, or fix deadlines. Issues and PRs may remain unanswered or be closed without a detailed explanation.
 
 ## Code Contributions

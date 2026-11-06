@@ -1,10 +1,10 @@
-English | [简体中文](#简体中文)
+[English](#english) | [简体中文](#简体中文)
 
 # Preview Revision Notes
 
-English | [简体中文](#简体中文)
+## English
 
-These notes describe an older desktop-preview revision. They are historical and do not describe the current `v1.0.0` release or current seven-track source list.
+These notes describe an older desktop-preview revision. They are historical and do not describe the current release or current seven-track source list. The Chinese notes below contain additional technical details.
 
 - Forest wind was removed and replaced by white noise in that preview.
 - The campfire recording and scene were changed in that preview.
