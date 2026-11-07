@@ -4,7 +4,7 @@ English | [简体中文](README.zh-CN.md)
 
 A personal experimental Android sound player with seven scenes, matching video backgrounds, ten interface languages, and a sleep timer. Audio experiences vary; the app does not promise to improve sleep or replace medical advice or treatment.
 
-<a name="preview-and-installation"></a>
+<a id="preview-and-installation" name="preview-and-installation"></a>
 
 ## Download and Install
 
@@ -33,7 +33,7 @@ Install Git LFS and Node.js. Clone the repository and download the LFS media bef
 
 [Preview setup and troubleshooting](docs/development/PREVIEW.md)
 
-<a name="source-and-build"></a>
+<a id="source-and-build" name="source-and-build"></a>
 
 ## Development
 
@@ -52,7 +52,7 @@ The current Android build uses Gradle Wrapper and the Android Gradle Plugin. `bu
 - `tools/`: current checks and signing template; `tools/archive/`: historical experiments.
 - `docs/archive/`: historical plans and evidence, not current operating instructions.
 
-<a name="media-contributions-and-status"></a>
+<a id="media-contributions-and-status" name="media-contributions-and-status"></a>
 
 ## License and Media
 

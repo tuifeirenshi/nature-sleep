@@ -4,7 +4,7 @@
 
 个人实验性质的 Android 声音播放器，包含七种声音场景、对应的视频背景、十种界面语言和定时功能。声音体验因人而异；本应用不承诺改善睡眠，也不替代医疗建议或治疗。
 
-<a name="预览与安装"></a>
+<a id="预览与安装" name="预览与安装"></a>
 
 ## 下载与安装
 
@@ -27,7 +27,7 @@
 
 截图于 2026-11-07 按 390 × 844 和 1440 × 900 尺寸截取，展示 v1.0.1 网页界面，不代表 Android 真机测试。[截图版本说明](docs/screenshots/README.zh-CN.md)。
 
-<a name="从源码运行"></a>
+<a id="从源码运行" name="从源码运行"></a>
 
 ## 本地预览
 
@@ -35,7 +35,7 @@
 
 [预览准备与问题排查](docs/development/PREVIEW.zh-CN.md)
 
-<a name="构建-android-apk"></a>
+<a id="构建-android-apk" name="构建-android-apk"></a>
 
 ## 开发
 
@@ -54,7 +54,7 @@
 - `tools/`：当前检查工具和签名模板；`tools/archive/`：历史实验。
 - `docs/archive/`：历史计划与证据，不是当前操作说明。
 
-<a name="素材与授权"></a>
+<a id="素材与授权" name="素材与授权"></a>
 
 ## 许可与素材
 
@@ -62,7 +62,7 @@
 
 [许可记录](docs/licensing/PROJECT_LICENSES.zh-CN.md)列出既有证据及待确认事项，[当前素材目录](docs/media/MEDIA_CATALOG.zh-CN.md)列出文件和哈希。部分平台条款仍待确认；待确认不代表已获许可。历史材料不代表当前仍在使用，也不是再分发授权依据。当前播放清单为 `web/tracks.js`。
 
-<a name="贡献和联系"></a>
+<a id="贡献和联系" name="贡献和联系"></a>
 
 ## 贡献与联系
 
@@ -70,7 +70,7 @@
 
 [贡献规则](docs/development/CONTRIBUTING.zh-CN.md) · [AI 与自动化规则](docs/development/AI_RULES.zh-CN.md)。GitHub 不保证在每次有人 Fork 时通知作者。
 
-<a name="当前状态"></a>
+<a id="当前状态" name="当前状态"></a>
 
 ## 项目状态
 
