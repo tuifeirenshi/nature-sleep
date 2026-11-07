@@ -45,20 +45,20 @@ tools/temp/
 
 # Explicit allowlist: update tracks.js, this list, and both media catalogs together.
 web/media/*
-!web/media/rain-loop4k.mp4
-!web/media/waves-4k.mp4
-!web/media/stream-clear.mp4
-!web/media/summer-night4k.mp4
-!web/media/campfire-close.mp4
-!web/media/music-moon.mp4
-!web/media/binaural-calm-light.mp4
-!web/media/rain-jungle-balanced.wav
-!web/media/waves-balanced.wav
-!web/media/stream-balanced.wav
-!web/media/forest-night-balanced.wav
-!web/media/campfire-balanced.wav
-!web/media/sleep-music-balanced.wav
-!web/media/brainwave-balanced.wav
+!web/media/rainforest-video.mp4
+!web/media/waves-video.mp4
+!web/media/stream-video.mp4
+!web/media/night-insects-video.mp4
+!web/media/campfire-video.mp4
+!web/media/sleep-music-video.mp4
+!web/media/brainwave-sleep-video.mp4
+!web/media/rainforest-audio.wav
+!web/media/waves-audio.wav
+!web/media/stream-audio.wav
+!web/media/night-insects-audio.wav
+!web/media/campfire-audio.wav
+!web/media/sleep-music-audio.wav
+!web/media/brainwave-sleep-audio.wav
 !web/media/covers/
 !web/media/covers/*.jpg
 

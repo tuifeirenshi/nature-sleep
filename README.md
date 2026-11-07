@@ -58,7 +58,7 @@ The current Android build uses Gradle Wrapper and the Android Gradle Plugin. `bu
 
 This is a **source-available project**, not a project distributed under a standard open-source code license. The repository can be viewed and forked on GitHub. No additional permission is granted for copying, modifying, commercial use, or redistribution of the code outside GitHub's platform permissions. Third-party media and icons follow their own licenses. Forks and personal builds are not official releases.
 
-See the [license record](docs/licensing/PROJECT_LICENSES.md) for recorded evidence and unresolved questions, and the [current media catalog](docs/media/MEDIA_CATALOG.md) for files and hashes. Some platform terms still require confirmation; a pending status is not a grant of permission. Historical material is not evidence of current use or redistribution rights. The current playlist is `web/tracks.js`.
+See the [license record](docs/licensing/THIRD_PARTY_LICENSES.md) for recorded evidence and unresolved questions, and the [current media catalog](docs/media/MEDIA_CATALOG.md) for files and hashes. Some platform terms still require confirmation; a pending status is not a grant of permission. Historical material is not evidence of current use or redistribution rights. The current playlist is `web/tracks.js`.
 
 ## Contributions and Contact
 

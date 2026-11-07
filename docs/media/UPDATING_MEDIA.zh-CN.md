@@ -9,4 +9,4 @@
 5. 运行 `node tools/check-media.cjs`、`git check-ignore --no-index web/media/<文件名>` 和 `git lfs ls-files`。确认选定播放文件没有被忽略，本机候选和签名文件仍被忽略。文件检查不能证明授权，也不检测编码。
 6. 提交前查看 `git diff --cached --stat` 和 `git diff --cached --name-only`。预览播放、视频切换、封面和手机/电脑布局。只有明确要求时才打包 APK，并单独验证构建与真机表现。
 
-另见[当前素材目录](MEDIA_CATALOG.zh-CN.md)和[许可记录](../licensing/PROJECT_LICENSES.zh-CN.md)。归档处理脚本只记录早期工作，不代表可以复现所有当前成品。
+另见[当前素材目录](MEDIA_CATALOG.zh-CN.md)和[许可记录](../licensing/THIRD_PARTY_LICENSES.zh-CN.md)。归档处理脚本只记录早期工作，不代表可以复现所有当前成品。

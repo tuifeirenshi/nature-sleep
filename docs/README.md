@@ -8,7 +8,7 @@ English | [简体中文](README.zh-CN.md)
 
 ## Media and Licensing
 
-[Current catalog](media/MEDIA_CATALOG.md) · [Updating media](media/UPDATING_MEDIA.md) · [License record](licensing/PROJECT_LICENSES.md)
+[Current catalog](media/MEDIA_CATALOG.md) · [Updating media](media/UPDATING_MEDIA.md) · [License record](licensing/THIRD_PARTY_LICENSES.md)
 
 ## Releases and Screenshots
 

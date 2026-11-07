@@ -8,7 +8,7 @@
 
 ## 素材与许可
 
-[当前素材目录](media/MEDIA_CATALOG.zh-CN.md) · [更新素材](media/UPDATING_MEDIA.zh-CN.md) · [许可记录](licensing/PROJECT_LICENSES.zh-CN.md)
+[当前素材目录](media/MEDIA_CATALOG.zh-CN.md) · [更新素材](media/UPDATING_MEDIA.zh-CN.md) · [许可记录](licensing/THIRD_PARTY_LICENSES.zh-CN.md)
 
 ## 版本与截图
 
