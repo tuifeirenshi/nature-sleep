@@ -2,53 +2,70 @@ English | [简体中文](README.zh-CN.md)
 
 # Nature Sleep
 
-Nature Sleep is a personal experimental Android sound player with seven soundscapes and matching video backgrounds. The project is evolving; features, media, and documentation may change. Audio experiences vary. The app does not promise to improve sleep and is not a substitute for medical advice or treatment.
+A personal experimental Android sound player with seven scenes, matching video backgrounds, ten interface languages, and a sleep timer. Audio experiences vary; the app does not promise to improve sleep or replace medical advice or treatment.
 
-![Phone preview (web preview)](docs/screenshots/v1.0.1-phone.png)
+<a name="preview-and-installation"></a>
 
-![Desktop preview (web preview)](docs/screenshots/v1.0.1-desktop.png)
+## Download and Install
 
-These screenshots show the v1.0.1 web interface, captured on 2026-11-07 at 390 × 844 and 1440 × 900. They are browser previews, not Android device screenshots.
+**[Download the latest Android release](https://github.com/tuifeirenshi/nature-sleep/releases/latest)** · [v1.0.1 release](https://github.com/tuifeirenshi/nature-sleep/releases/tag/v1.0.1) · [Version history](docs/release/README.md)
 
-This is a **source-available project**, not a project distributed under a standard open-source code license. The public repository can be viewed and forked on GitHub. No additional permission is granted for copying, modifying, commercial use, or redistribution of the code outside GitHub's platform permissions. Third-party media and icons remain subject to their own licenses. Forks, modified builds, and personal builds are not official releases.
+- Android 8.0 or later; phones and tablets. Current published APK: `nature-sleep-v1.0.1.apk`.
+- Download the APK from the Release assets and open it on your device. Android may ask you to allow installation from the download app. Installation over an older copy depends on its signing key and version code; uninstalling removes local settings.
+- Background playback, lock-screen controls, and liquid glass may vary by device. See the Release notes for limitations and SHA-256.
 
-## Preview and Installation
+## Screenshots
 
-- Desktop preview: install Node.js and make `node` available on PATH. On Windows, double-click `open-preview.cmd` to open `http://127.0.0.1:8768/` in the default browser.
-- Android: download `nature-sleep-v1.0.1.apk` from [GitHub Releases](https://github.com/tuifeirenshi/nature-sleep/releases). Its Android version name is `1.0.1`.
-- Android 8.0 or later; phones and tablets are supported. Background behavior may vary with device-specific battery management.
+<details>
+<summary>Phone and desktop web previews</summary>
 
-## Source and Build
+![Phone web preview](docs/screenshots/v1.0.1-phone.png)
 
-Large media files use Git LFS. Install Git LFS before cloning, then run:
+![Desktop web preview](docs/screenshots/v1.0.1-desktop.png)
 
-```powershell
-git lfs install
-git clone https://github.com/tuifeirenshi/nature-sleep.git
-cd nature-sleep
-git lfs pull
-git lfs ls-files
-```
+</details>
 
-The last command should list 14 current audio/video files. If media is missing, check that `git lfs pull` succeeded and that `web/media/` contains the actual files rather than small LFS pointer text files.
+Captured on 2026-11-07 at 390 × 844 and 1440 × 900. These show the v1.0.1 web interface, not Android device testing. [Screenshot versions](docs/screenshots/README.md).
 
-The Android app uses the official Android Gradle Plugin and Gradle Wrapper. On Windows, install Node.js, JDK 21, Android SDK Platform 35, Build Tools 35.0.0, and FFmpeg with libx264 on PATH; set `JAVA_HOME` and `ANDROID_SDK_ROOT`. Run `.\build.ps1` in PowerShell only when an APK build is wanted. It creates separate 4K H.264 video copies targeting 9 Mbps; the campfire uses 30 fps and other frame rates are retained. Web source media is unchanged. The Gradle 8.9 wrapper verifies its download SHA-256.
+## Local Preview
 
-To sign a release, first create the ignored `tools/signing.local.properties` from `tools/signing.example.properties` and provide your own keystore and credentials. Without signing configuration the output is `android/build/outputs/apk/release/app-release-unsigned.apk`, which cannot be installed directly. A configured signed build produces `app-release.apk` in the same directory. The build entry reads Gradle's `output-metadata.json` to report the output actually produced, including when an older APK remains in the directory. Keep signing credentials private; losing the signing key can prevent updates.
+Install Git LFS and Node.js. Clone the repository and download the LFS media before starting the preview; a source ZIP may not include the actual media. On Windows, double-click `open-preview.cmd` to open `http://127.0.0.1:8768/`.
+
+[Preview setup and troubleshooting](docs/development/PREVIEW.md)
+
+<a name="source-and-build"></a>
+
+## Development
+
+The current Android build uses Gradle Wrapper and the Android Gradle Plugin. `build.ps1` is the current Windows entry, not a leftover of the old manual build. Run it only when an APK build is wanted.
+
+- [Build prerequisites, signing, and output paths](docs/development/BUILD.md)
+- [Build migration: manual tools to Gradle](docs/development/BUILD_MIGRATION.md)
+- [Tool and archive index](tools/README.md)
+- [Updating playback media](docs/media/UPDATING_MEDIA.md)
 
 ## Repository Guide
 
-- `web/`: player interface and current media; `android/`: Android app and media controls.
-- `scripts/`: video preparation and local preview; `docs/`: licensing, media, release and development records.
-- `tools/`: current media check and local-signing template; historical experiments are isolated under `tools/archive/` and are not current test/build commands.
-- `docs/archive/`: historical notes, not current instructions.
+- `web/`: player UI and current playback media; `android/`: Android code and media controls.
+- `scripts/`: current preview and build helpers; `gradle/`: Gradle Wrapper files.
+- `docs/`: [documentation index](docs/README.md), licensing, media, and release records.
+- `tools/`: current checks and signing template; `tools/archive/`: historical experiments.
+- `docs/archive/`: historical plans and evidence, not current operating instructions.
 
-See the [documentation index](docs/README.md), [tool index](tools/README.md), and [media update workflow](docs/media/UPDATING_MEDIA.md). Run `node tools/check-media.cjs` for the current file/schema check. Archived browser tests require adaptation and are not a portable current regression suite.
+<a name="media-contributions-and-status"></a>
 
-## Media, Contributions, and Status
+## License and Media
 
-See [PROJECT_LICENSES.md](docs/licensing/PROJECT_LICENSES.md) for third-party license evidence and unresolved permission questions, and [MEDIA_CATALOG.md](docs/media/MEDIA_CATALOG.md) for file paths, hashes, technical details, and processing records. Some platform terms still require further confirmation; a pending status is not a grant of permission. Historical files in Git may no longer be used and are not evidence of redistribution rights. The current playback list is `web/tracks.js`.
+This is a **source-available project**, not a project distributed under a standard open-source code license. The repository can be viewed and forked on GitHub. No additional permission is granted for copying, modifying, commercial use, or redistribution of the code outside GitHub's platform permissions. Third-party media and icons follow their own licenses. Forks and personal builds are not official releases.
 
-Issues, suggestions, and Pull Requests are welcome, but there is no review or response deadline and merging is not guaranteed. External code contributions will not be merged until code licensing and contribution permissions are decided. Media contributions must include source URL, author, license, download date, redistribution and modification permissions, and SHA-256, and must be confirmed by the project author. No public project email is provided; use GitHub Issues or Discussions. GitHub does not guarantee a notification for every fork. See [CONTRIBUTING.md](docs/development/CONTRIBUTING.md) and [AI_RULES.md](docs/development/AI_RULES.md).
+See the [license record](docs/licensing/PROJECT_LICENSES.md) for recorded evidence and unresolved questions, and the [current media catalog](docs/media/MEDIA_CATALOG.md) for files and hashes. Some platform terms still require confirmation; a pending status is not a grant of permission. Historical material is not evidence of current use or redistribution rights. The current playlist is `web/tracks.js`.
 
-This is a personal experimental project. No long-term maintenance, bug-free operation, or compatibility with every device is promised. Windows, iOS, and macOS support is undecided and has no timeline.
+## Contributions and Contact
+
+Use Issues for bugs and Discussions for general conversation. No public project email is provided. Suggestions and PRs are welcome, but review, replies, fixes, and merging have no guaranteed deadline. External code will not be merged until code licensing and contribution permissions are decided; media submissions require provenance and author confirmation.
+
+[Contribution policy](docs/development/CONTRIBUTING.md) · [AI and automation rules](docs/development/AI_RULES.md). GitHub does not guarantee a notification for every fork.
+
+## Project Status
+
+This is a personal experimental project with no promise of long-term maintenance, bug-free operation, or compatibility with every device. Features, media, and documentation may change. Windows, iOS, and macOS support is undecided and has no timeline.

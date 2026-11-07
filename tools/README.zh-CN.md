@@ -4,6 +4,8 @@
 
 以下命令从仓库根目录运行。当前 JavaScript 检查只使用 Node.js 内置模块，不需要安装 npm 依赖。
 
+[预览指南](../docs/development/PREVIEW.zh-CN.md) · [构建指南](../docs/development/BUILD.zh-CN.md) · [构建迁移](../docs/development/BUILD_MIGRATION.zh-CN.md) · [32 个历史文件清单](archive/README.zh-CN.md)
+
 | 入口 | 状态和用途 |
 | --- | --- |
 | `open-preview.cmd` | 当前 Windows 预览入口，调用 `scripts/preview/open-preview.ps1` 与 `server.cjs` |

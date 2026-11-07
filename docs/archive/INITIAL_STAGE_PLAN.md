@@ -163,15 +163,15 @@ The original recommendation was to begin at step 0 and proceed in order, rather 
 
 ## 简体中文
 
-# 自然入眠：初步阶段执行计划（历史存档）
-
 本计划描述的是早期开发阶段，仅作为历史背景保留。文中的版本号、文件路径、拟定步骤和完成标准都不是当前指引。请以当前双语 README 和当前素材/授权记录为准。本存档不代表当前发布内容。以下“尚未建立 Git”、拟定功能、素材发布门槛和定时行为均属于当时记录；历史打包流程不代表授权自动生成 APK。
+
+### 计划范围
 
 这份计划只处理当前阶段：把 Android 版本做稳定，把结构整理成容易添加音景、修改界面和修复问题的形态。现在不必仓促决定代码许可证、收费方式、广告、Google Play、Windows、iOS 或 macOS 版本；但素材来源、许可类别和能否随公开源码/APK 再发布必须从现在开始核查和记录，不能等到上传前临时补。
 
 公开准备的素材许可盘点见 `../licensing/PROJECT_LICENSES.md` / `../licensing/PROJECT_LICENSES.zh-CN.md`；素材目录见 `../media/MEDIA_CATALOG.md` / `../media/MEDIA_CATALOG.zh-CN.md`。本计划是早期历史记录，不代表当前发布结构。
 
-## 当前基线
+### 当前基线
 
 - 项目目录：`D:\codex\rain-sleep`
 - 电脑预览：双击 `open-preview.cmd`
@@ -184,7 +184,7 @@ The original recommendation was to begin at step 0 and proceed in order, rather 
 - Android 页面桥接：`android\src\com\rainsleep\app\MainActivity.java`
 - 当前网页预览音景：热带雨林、海浪、溪流、夜间虫鸣、篝火、助眠音乐、脑波助眠
 
-## 工作顺序
+**工作顺序**
 
 ### 第 0 步：冻结一个可回退版本
 
@@ -329,7 +329,7 @@ The original recommendation was to begin at step 0 and proceed in order, rather 
 
 完成标准：测试表中每项都有“通过/失败/未测试”，不能用“应该没问题”代替真机结果。
 
-## 现在暂时不做的事
+### 现在暂时不做的事
 
 - 不迁移到 Flutter、React Native 或其他框架。当前 Java + WebView + 本地资源已经能覆盖手机和平板，迁移会增加新的兼容问题。
 - 不把视频改成联网播放。离线资源更适合睡眠场景，也避免网络中断。
@@ -338,7 +338,7 @@ The original recommendation was to begin at step 0 and proceed in order, rather 
 - 不承诺 Windows、iOS、macOS 的正式版本；先保留可复用的网页界面和音景资料结构。
 - 不继续盲目增加音景数量；先把现有 7 个的播放、音量、淡入淡出和定时行为稳定下来。
 
-## 每一阶段的交付物
+### 每一阶段的交付物
 
 完成第 0 步：`TEST_LOG.md` 和可回退的 v14 APK。
 

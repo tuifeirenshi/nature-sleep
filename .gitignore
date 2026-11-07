@@ -1,5 +1,6 @@
 # Build outputs and install packages
 dist/
+local/
 android/build/
 android/.gradle/
 .gradle/

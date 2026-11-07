@@ -2,67 +2,76 @@
 
 # 自然入眠
 
-自然入眠是一款个人实验性质的 Android 声音播放器，包含七种自然音景与助眠声音，并为每种音景配有视频背景。项目仍在调整中，功能、素材和文档都可能变化。声音体验因人而异；本应用不承诺改善睡眠，也不替代医疗建议或治疗。
+个人实验性质的 Android 声音播放器，包含七种声音场景、对应的视频背景、十种界面语言和定时功能。声音体验因人而异；本应用不承诺改善睡眠，也不替代医疗建议或治疗。
 
-![手机预览界面（网页预览）](docs/screenshots/v1.0.1-phone.png)
+<a name="预览与安装"></a>
 
-![电脑预览界面（网页预览）](docs/screenshots/v1.0.1-desktop.png)
+## 下载与安装
 
-以上截图为 v1.0.1 网页界面，于 2026-11-07 按 390 × 844 和 1440 × 900 尺寸截取；这是浏览器预览，不是 Android 真机截图。
+**[下载最新 Android 版本](https://github.com/tuifeirenshi/nature-sleep/releases/latest)** · [v1.0.1 发布页](https://github.com/tuifeirenshi/nature-sleep/releases/tag/v1.0.1) · [版本记录](docs/release/README.zh-CN.md)
 
-这是一个**公开源码项目**，不是采用标准开源许可证的项目。公开仓库允许在 GitHub 内查看和 Fork；项目当前没有授予平台外复制、修改、商用或再发布代码的许可。第三方音视频和图标分别依其自身许可证使用。Fork、改版和个人构建不代表官方版本。
+- Android 8.0 及以上，支持手机和平板。当前已发布 APK：`nature-sleep-v1.0.1.apk`。
+- 在发布页附件中下载 APK，再用设备打开安装。系统可能要求允许通过下载应用安装。能否覆盖旧版取决于签名及内部版本号；卸载会清除本地设置。
+- 后台播放、锁屏控制和液态玻璃可能因设备而异。限制及 SHA-256 见对应版本的发布说明。
 
-## 预览与安装
+## 界面截图
 
-- 电脑预览：先安装 Node.js 并确保 `node` 在 PATH 中；Windows 上双击 `open-preview.cmd`，即可用默认浏览器打开 `http://127.0.0.1:8768/`。
-- Android：从 [GitHub Releases](https://github.com/tuifeirenshi/nature-sleep/releases) 下载 `nature-sleep-v1.0.1.apk`，应用版本为 `1.0.1`。
-- Android 8.0 及以上；支持手机和平板。后台播放由 Android 通知控制；实际后台行为可能受设备厂商的省电设置影响。
+<details>
+<summary>展开手机与电脑网页预览</summary>
 
-## 从源码运行
+![手机网页预览](docs/screenshots/v1.0.1-phone.png)
 
-大媒体文件使用 Git LFS。克隆前先安装 Git LFS，然后执行：
+![电脑网页预览](docs/screenshots/v1.0.1-desktop.png)
 
-```powershell
-git lfs install
-git clone https://github.com/tuifeirenshi/nature-sleep.git
-cd nature-sleep
-git lfs pull
-git lfs ls-files
-```
+</details>
 
-`git lfs ls-files` 应列出 14 个当前音视频文件。若页面预览或构建提示媒体文件缺失，请确认 `git lfs pull` 已成功，并检查 `web/media/` 中文件不是小型 LFS 指针文本。
+截图于 2026-11-07 按 390 × 844 和 1440 × 900 尺寸截取，展示 v1.0.1 网页界面，不代表 Android 真机测试。[截图版本说明](docs/screenshots/README.zh-CN.md)。
 
-## 构建 Android APK
+<a name="从源码运行"></a>
 
-Android 应用通过 Gradle Wrapper 和官方 Android Gradle Plugin 构建。Windows 上需要 Node.js、JDK 21、Android SDK Platform 35、Build Tools 35.0.0 和 PATH 中提供 libx264 的 FFmpeg，并设置 `JAVA_HOME` 与 `ANDROID_SDK_ROOT`。运行 `build.ps1` 会先为 APK 生成独立的 4K H.264 视频副本，目标平均码率 9 Mbps，篝火为 30 帧/秒，其余帧率保持原样；网页原素材不变。Wrapper 使用 Gradle 8.9 并校验下载的 SHA-256。
+## 本地预览
 
-```powershell
-.\build.ps1
-```
+先安装 Git LFS 和 Node.js，克隆仓库并下载 LFS 媒体，再启动预览；直接下载源码 ZIP 可能不包含实际媒体。Windows 上双击 `open-preview.cmd`，打开 `http://127.0.0.1:8768/`。
 
-只在需要打包 APK 时执行上述命令。签名密钥及密码仅保存在本机，不提交到 Git。要生成已签名版本，运行脚本前需自行配置 `tools/signing.local.properties` 和自己的密钥，格式参考 `tools/signing.example.properties`。未配置时输出 `android/build/outputs/apk/release/app-release-unsigned.apk`，不能直接安装；签名配置有效时在同目录输出 `app-release.apk`。入口脚本会读取 Gradle 的 `output-metadata.json`，报告本次实际输出，避免误选目录中残留的旧 APK。不要把真实签名密钥或密码发送给他人或上传到仓库。遗失签名密钥会影响后续为同一应用签名更新。
+[预览准备与问题排查](docs/development/PREVIEW.zh-CN.md)
+
+<a name="构建-android-apk"></a>
+
+## 开发
+
+当前 Android 构建使用 Gradle Wrapper 和 Android Gradle Plugin。根目录 `build.ps1` 是当前 Windows 入口，不是旧手工构建脚本残留。只在需要打包 APK 时运行。
+
+- [构建环境、签名和输出路径](docs/development/BUILD.zh-CN.md)
+- [构建迁移：从手工工具到 Gradle](docs/development/BUILD_MIGRATION.zh-CN.md)
+- [工具与归档索引](tools/README.zh-CN.md)
+- [更新播放素材](docs/media/UPDATING_MEDIA.zh-CN.md)
 
 ## 仓库目录
 
-- `web/`：播放器界面和当前素材；`android/`：安卓应用和媒体控制。
-- `scripts/`：视频处理和本地预览；`docs/`：许可、素材、发布及开发记录。
-- `tools/`：当前媒体检查及本机签名模板；历史实验单独放在 `tools/archive/`，不属于当前测试或构建命令。
-- `docs/archive/`：历史笔记，不是当前操作说明。
+- `web/`：播放器界面和当前播放素材；`android/`：安卓代码与媒体控制。
+- `scripts/`：当前预览和构建辅助脚本；`gradle/`：Gradle Wrapper 配套文件。
+- `docs/`：[文档目录](docs/README.zh-CN.md)、许可、素材及发布记录。
+- `tools/`：当前检查工具和签名模板；`tools/archive/`：历史实验。
+- `docs/archive/`：历史计划与证据，不是当前操作说明。
 
-另见[文档目录](docs/README.zh-CN.md)、[工具索引](tools/README.zh-CN.md)和[更新素材流程](docs/media/UPDATING_MEDIA.zh-CN.md)。当前文件和资料结构检查使用 `node tools/check-media.cjs`。归档浏览器测试需要适配，不属于可直接跨电脑运行的当前回归测试套件。
+<a name="素材与授权"></a>
 
-## 素材与授权
+## 许可与素材
 
-第三方许可证据及尚未解决的授权问题见[项目许可证记录](docs/licensing/PROJECT_LICENSES.zh-CN.md)；素材文件路径、哈希、技术信息和处理记录见[当前素材目录](docs/media/MEDIA_CATALOG.zh-CN.md)。部分平台条款仍有待进一步确认；标注“待确认”不代表已经取得授权。
+这是一个**公开源码项目**，不是采用标准开源许可证的项目。允许在 GitHub 内查看和 Fork；项目当前没有额外授予平台外复制、修改、商用或再发布代码的许可。第三方素材和图标分别依其自身许可证使用。Fork 和个人构建不代表官方版本。
 
-仓库历史可能包含当前版本不再使用的旧素材、候选文件和处理记录。它们仅供历史参考，不代表仍被当前应用使用，也不代表获得了再分发许可。当前播放清单以 `web/tracks.js` 为准。
+[许可记录](docs/licensing/PROJECT_LICENSES.zh-CN.md)列出既有证据及待确认事项，[当前素材目录](docs/media/MEDIA_CATALOG.zh-CN.md)列出文件和哈希。部分平台条款仍待确认；待确认不代表已获许可。历史材料不代表当前仍在使用，也不是再分发授权依据。当前播放清单为 `web/tracks.js`。
 
-## 贡献和联系
+<a name="贡献和联系"></a>
 
-可以提交问题、建议或 Pull Request，但没有审核或回复时限，也不保证会合并。外部代码贡献在代码许可和贡献授权方式明确前不会合并。媒体贡献必须附来源 URL、作者、许可证、下载日期、再分发及修改权限和文件 SHA-256，并等待项目作者确认。
+## 贡献与联系
 
-目前不公开项目邮箱。可使用 GitHub Issues 报告问题、使用 Discussions 交流；是否处理由项目作者决定。GitHub 不保证在有人 Fork 时通知仓库作者。详见 [贡献说明](docs/development/CONTRIBUTING.zh-CN.md) 与 [AI 修改规则](docs/development/AI_RULES.zh-CN.md)。
+使用 Issues 报告问题，使用 Discussions 交流。目前不公开项目邮箱。欢迎建议和 PR，但不承诺审核、回复、修复或合并期限。代码许可和贡献授权方式明确前不合并外部代码；媒体提交须提供来源材料并由作者确认。
 
-## 当前状态
+[贡献规则](docs/development/CONTRIBUTING.zh-CN.md) · [AI 与自动化规则](docs/development/AI_RULES.zh-CN.md)。GitHub 不保证在每次有人 Fork 时通知作者。
 
-这是个人实验项目，不承诺长期维护、无 Bug 或兼容所有设备。当前发布版本的功能和素材可能继续变化。Windows、iOS、macOS 等其他平台尚未确定，没有时间表。
+<a name="当前状态"></a>
+
+## 项目状态
+
+个人实验项目，不承诺长期维护、无 Bug 或兼容所有设备。功能、素材和文档可能变化。Windows、iOS、macOS 支持尚未确定，没有时间表。

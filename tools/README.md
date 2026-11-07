@@ -4,6 +4,8 @@ English | [简体中文](README.zh-CN.md)
 
 Run commands from the repository root. Current JavaScript checks use Node.js built-in modules and need no npm packages.
 
+[Preview guide](../docs/development/PREVIEW.md) · [Build guide](../docs/development/BUILD.md) · [Build migration](../docs/development/BUILD_MIGRATION.md) · [32-file archive manifest](archive/README.md)
+
 | Entry | Status and purpose |
 | --- | --- |
 | `open-preview.cmd` | Current Windows preview entry; calls `scripts/preview/open-preview.ps1` and `server.cjs` |
