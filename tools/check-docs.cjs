@@ -22,6 +22,7 @@ function headings(file) {
     ids.add(count ? `${slug}-${count}` : slug);
   }
   anchors.set(file, ids);
+  for (const match of read(file).matchAll(/<a\s+(?:name|id)="([^"]+)"[^>]*>/g)) ids.add(match[1]);
   return ids;
 }
 let links = 0;
@@ -29,6 +30,14 @@ for (const file of new Set(files)) {
   if (!fs.existsSync(path.join(root, file))) continue;
   const text = read(file).replace(/^\s*(```|~~~)[\s\S]*?^\s*\1.*$/gm, '');
   if (!/English.*简体中文/.test(text.split(/\r?\n/)[0])) errors.push(`${file}: missing opening language navigation`);
+  if ((text.match(/^#\s+.+$/gm) || []).length !== 1) errors.push(`${file}: expected one document title`);
+  if (file.endsWith('.zh-CN.md')) {
+    const partner = file.replace(/\.zh-CN\.md$/, '.md');
+    if (!fs.existsSync(path.join(root, partner))) errors.push(`${file}: missing English partner`);
+  } else if (!fs.existsSync(path.join(root, file.replace(/\.md$/, '.zh-CN.md')))) {
+    const english = text.indexOf('## English'), chinese = text.indexOf('## 简体中文');
+    if (english < 0 || chinese < english) errors.push(`${file}: missing partner or English-first bilingual sections`);
+  }
   for (const match of text.matchAll(/!?\[[^\]]*\]\(([^\s)]+)(?:\s+"[^"]*")?\)/g)) {
     const href = match[1];
     if (/^[a-z][a-z\d+.-]*:/i.test(href) || href.startsWith('//')) continue;
