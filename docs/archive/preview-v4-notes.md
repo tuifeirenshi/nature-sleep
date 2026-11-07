@@ -4,12 +4,16 @@
 
 ## English
 
-These notes describe an older desktop-preview revision. They are historical and do not describe the current release or current seven-track source list. The Chinese notes below contain additional technical details.
+These notes describe an older desktop-preview revision. They are historical and do not describe the current release or current seven-track source list.
 
-- Forest wind was removed and replaced by white noise in that preview.
-- The campfire recording and scene were changed in that preview.
-- The night-insects background used a moonlit forest clip in that preview.
-- The source was Mixkit; the notes said Android scene lists and notification names still needed synchronization before packaging.
+Only the desktop preview was updated; no new APK was produced at that stage.
+
+- Forest wind was removed and replaced by a generated 120-second fixed broadband white-noise recording, low-pass filtered at 6500 Hz with a target loudness of -23 LUFS.
+- The campfire audio was replaced by Mixkit “Campfire burning crackles” / 1329, normalized to -23 LUFS with a -3 dB peak.
+- The campfire video was replaced by Mixkit “Campfire burning wood logs in the dark” / 22730, 3840 × 2160.
+- Night insects used “Moon in the sky a snowy forest” / 3350, 3840 × 2160. The original showed a snowy forest at dusk with the moon; playback reduced brightness and saturation, and the portrait crop retained the moon.
+- White noise shared the moonlit forest background.
+- Source: https://mixkit.co/ . The Android track list and notification names still needed synchronization before the next build.
 
 ## 简体中文
 

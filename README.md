@@ -4,11 +4,11 @@ English | [简体中文](README.zh-CN.md)
 
 Nature Sleep is a personal experimental Android sound player with seven soundscapes and matching video backgrounds. The project is evolving; features, media, and documentation may change. Audio experiences vary. The app does not promise to improve sleep and is not a substitute for medical advice or treatment.
 
-![Phone preview (web preview)](docs/screenshots/v1.0-phone.png)
+![Phone preview (web preview)](docs/screenshots/v1.0.1-phone.png)
 
-![Desktop preview (web preview)](docs/screenshots/v1.0-desktop.png)
+![Desktop preview (web preview)](docs/screenshots/v1.0.1-desktop.png)
 
-These screenshots show the v1.0 web preview; the current interface may differ.
+These screenshots show the v1.0.1 web interface, captured on 2026-11-07 at 390 × 844 and 1440 × 900. They are browser previews, not Android device screenshots.
 
 This is a **source-available project**, not a project distributed under a standard open-source code license. The public repository can be viewed and forked on GitHub. No additional permission is granted for copying, modifying, commercial use, or redistribution of the code outside GitHub's platform permissions. Third-party media and icons remain subject to their own licenses. Forks, modified builds, and personal builds are not official releases.
 
@@ -32,14 +32,18 @@ git lfs ls-files
 
 The last command should list 14 current audio/video files. If media is missing, check that `git lfs pull` succeeded and that `web/media/` contains the actual files rather than small LFS pointer text files.
 
-The Android app uses the official Android Gradle Plugin and Gradle Wrapper. On Windows, install Node.js, JDK 21, Android SDK Platform 35, Build Tools 35.0.0, and FFmpeg with libx264 on PATH; set `JAVA_HOME` and `ANDROID_SDK_ROOT`. To sign a release, first create the ignored `tools/signing.local.properties` from `tools/signing.example.properties` and provide your own keystore and credentials. Without signing configuration the release APK is unsigned. Run `.\build.ps1` in PowerShell. It creates separate 4K H.264 video copies targeting 9 Mbps; the campfire uses 30 fps and other frame rates are retained. Web source media is unchanged. The Gradle 8.9 wrapper verifies its download SHA-256. Keep signing credentials private; losing the signing key can prevent updates.
+The Android app uses the official Android Gradle Plugin and Gradle Wrapper. On Windows, install Node.js, JDK 21, Android SDK Platform 35, Build Tools 35.0.0, and FFmpeg with libx264 on PATH; set `JAVA_HOME` and `ANDROID_SDK_ROOT`. Run `.\build.ps1` in PowerShell only when an APK build is wanted. It creates separate 4K H.264 video copies targeting 9 Mbps; the campfire uses 30 fps and other frame rates are retained. Web source media is unchanged. The Gradle 8.9 wrapper verifies its download SHA-256.
+
+To sign a release, first create the ignored `tools/signing.local.properties` from `tools/signing.example.properties` and provide your own keystore and credentials. Without signing configuration the output is `android/build/outputs/apk/release/app-release-unsigned.apk`, which cannot be installed directly. A configured signed build produces `app-release.apk` in the same directory. The build entry reads Gradle's `output-metadata.json` to report the output actually produced, including when an older APK remains in the directory. Keep signing credentials private; losing the signing key can prevent updates.
 
 ## Repository Guide
 
 - `web/`: player interface and current media; `android/`: Android app and media controls.
 - `scripts/`: video preparation and local preview; `docs/`: licensing, media, release and development records.
-- `tools/`: checks and historical media/QA experiments. Some older scripts contain machine-specific paths and are not portable; do not assume they apply to the current version.
+- `tools/`: current media check and local-signing template; historical experiments are isolated under `tools/archive/` and are not current test/build commands.
 - `docs/archive/`: historical notes, not current instructions.
+
+See the [documentation index](docs/README.md), [tool index](tools/README.md), and [media update workflow](docs/media/UPDATING_MEDIA.md). Run `node tools/check-media.cjs` for the current file/schema check. Archived browser tests require adaptation and are not a portable current regression suite.
 
 ## Media, Contributions, and Status
 

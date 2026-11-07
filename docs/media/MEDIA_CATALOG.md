@@ -6,7 +6,7 @@ Audit date: 2026-10-28. This catalog describes the 14 files used by the current 
 
 ## Current Web Playlist Files
 
-The source-file paths in this table, including `tools/cc0-audio/` and `tools/moon-detail.mp4`, refer to the author's local copies and are not included in the public repository. The current playback files under `web/media/` are tracked with Git LFS.
+The source-file paths in this table, including `tools/cc0-audio/` and `tools/moon-detail.mp4`, refer to the author's local copies and are not included in the public repository. The current playback files under `web/media/` are tracked with Git LFS. Historical script references such as `tools/process-yourell-theta.cjs` and `tools/process-cc0-audio.cjs` now resolve under `tools/archive/media/`; their contents and original source-path records are preserved. See the [tool index](../../tools/README.md) and [media update workflow](UPDATING_MEDIA.md).
 
 | Track | Video file / SHA-256 | Recorded video metadata and source reference | Audio output / SHA-256 | Retained source file / SHA-256 | Recorded processing/provenance |
 |---|---|---|---|---|---|
