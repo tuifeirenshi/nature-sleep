@@ -13,7 +13,7 @@ if (!Array.isArray(tracks) || tracks.length === 0) {
 }
 
 const ids = new Set();
-const required = ['id', 'name', 'icon', 'video', 'audio', 'title'];
+const required = ['id', 'name', 'icon', 'video', 'audio', 'cover', 'title'];
 for (const track of tracks) {
   for (const field of required) {
     if (typeof track[field] !== 'string' || track[field].trim() === '') {
@@ -22,7 +22,7 @@ for (const track of tracks) {
   }
   if (ids.has(track.id)) throw new Error(`duplicate track id: ${track.id}`);
   ids.add(track.id);
-  for (const field of ['video', 'audio']) {
+  for (const field of ['video', 'audio', 'cover']) {
     const relativePath = track[field].split('?', 1)[0].split('#', 1)[0];
     const file = path.join(root, 'web', relativePath);
     if (!file.startsWith(path.join(root, 'web') + path.sep)) {

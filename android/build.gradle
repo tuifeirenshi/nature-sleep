@@ -5,7 +5,7 @@ plugins {
 def webRoot = rootProject.file("web")
 def packageAssets = project.file("package-assets")
 def compressedVideoRoot = project.layout.buildDirectory.dir("compressed-video-4k-9m")
-def videoNames = ["rain-loop4k.mp4", "waves-4k.mp4", "stream-clear.mp4", "summer-night4k.mp4", "campfire-close.mp4", "music-moon.mp4", "binaural-calm-light.mp4"]
+def videoNames = ["rainforest-video.mp4", "waves-video.mp4", "stream-video.mp4", "night-insects-video.mp4", "campfire-video.mp4", "sleep-music-video.mp4", "brainwave-sleep-video.mp4"]
 def signingFile = rootProject.file("tools/signing.local.properties")
 def signingValues = new Properties()
 if (signingFile.isFile()) {
@@ -67,7 +67,7 @@ tasks.register("syncWebAssets", Sync) {
         into("media")
     }
     from(new File(webRoot, "media")) {
-        include("rain-jungle-balanced.wav", "waves-balanced.wav", "stream-balanced.wav", "forest-night-balanced.wav", "campfire-balanced.wav", "sleep-music-balanced.wav", "brainwave-balanced.wav")
+        include("rainforest-audio.wav", "waves-audio.wav", "stream-audio.wav", "night-insects-audio.wav", "campfire-audio.wav", "sleep-music-audio.wav", "brainwave-sleep-audio.wav")
         into("media")
     }
 }

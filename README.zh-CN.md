@@ -60,7 +60,7 @@
 
 这是一个**公开源码项目**，不是采用标准开源许可证的项目。允许在 GitHub 内查看和 Fork；项目当前没有额外授予平台外复制、修改、商用或再发布代码的许可。第三方素材和图标分别依其自身许可证使用。Fork 和个人构建不代表官方版本。
 
-[许可记录](docs/licensing/PROJECT_LICENSES.zh-CN.md)列出既有证据及待确认事项，[当前素材目录](docs/media/MEDIA_CATALOG.zh-CN.md)列出文件和哈希。部分平台条款仍待确认；待确认不代表已获许可。历史材料不代表当前仍在使用，也不是再分发授权依据。当前播放清单为 `web/tracks.js`。
+[许可记录](docs/licensing/THIRD_PARTY_LICENSES.zh-CN.md)列出既有证据及待确认事项，[当前素材目录](docs/media/MEDIA_CATALOG.zh-CN.md)列出文件和哈希。部分平台条款仍待确认；待确认不代表已获许可。历史材料不代表当前仍在使用，也不是再分发授权依据。当前播放清单为 `web/tracks.js`。
 
 <a id="贡献和联系" name="贡献和联系"></a>
 

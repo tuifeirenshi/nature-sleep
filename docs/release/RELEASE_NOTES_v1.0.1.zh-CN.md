@@ -9,6 +9,6 @@
 - APK 内视频保持 4K，H.264 目标平均码率 9 Mbps；篝火为 30 帧/秒。原始网页素材不变。
 - 应用版本名 `1.0.1`，内部版本号 `10002`。锁屏卡片和液态玻璃效果因设备而异，仍需真机验证。
 
-第三方素材及未解决的授权问题见[许可记录](../licensing/PROJECT_LICENSES.zh-CN.md)和[素材目录](../media/MEDIA_CATALOG.zh-CN.md)。本应用不承诺改善睡眠，也不替代医疗建议或治疗。
+第三方素材及未解决的授权问题见[许可记录](../licensing/THIRD_PARTY_LICENSES.zh-CN.md)和[素材目录](../media/MEDIA_CATALOG.zh-CN.md)。本应用不承诺改善睡眠，也不替代医疗建议或治疗。
 
 SHA-256 (`nature-sleep-v1.0.1.apk`): `A8111C10B2AC30F9482DD366A90D7B71C6D4EF7864F53ADF623AF200DD1F19CA`

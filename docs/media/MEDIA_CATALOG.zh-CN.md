@@ -2,7 +2,7 @@
 
 # 当前素材目录与处理记录
 
-既有来源核查记录日期：2026-10-28；目录排版整理：2026-11-07。本目录保留七组音视频的文件名、已记录哈希、来源及处理缺口，不代表重新核查或新增授权。许可结论见[许可记录](../licensing/PROJECT_LICENSES.zh-CN.md)。
+既有来源核查记录日期：2026-10-28；目录排版整理：2026-11-07。本目录保留七组音视频的文件名、已记录哈希、来源及处理缺口，不代表重新核查或新增授权。许可结论见[许可记录](../licensing/THIRD_PARTY_LICENSES.zh-CN.md)。
 
 ## 当前网页清单文件
 
@@ -23,7 +23,7 @@
 <details>
 <summary>展开来源、哈希和处理记录</summary>
 
-**视频文件:** `web/media/rain-loop4k.mp4`
+**视频文件:** `web/media/rainforest-video.mp4`
 
 SHA-256:
 
@@ -31,7 +31,7 @@ SHA-256:
 65427242CD317E93D694111BB94B871ACA4AD09961BA1F9EAF61BA211033C20
 ```
 
-**音频成品:** `web/media/rain-jungle-balanced.wav`
+**音频成品:** `web/media/rainforest-audio.wav`
 
 SHA-256:
 
@@ -58,7 +58,7 @@ CCC718A44325BF104510B694C9D94937A56C2417C777C8781B4DC53B0E54A91C
 <details>
 <summary>展开来源、哈希和处理记录</summary>
 
-**视频文件:** `web/media/waves-4k.mp4`
+**视频文件:** `web/media/waves-video.mp4`
 
 SHA-256:
 
@@ -66,7 +66,7 @@ SHA-256:
 D10EC7D89415DFDC80D80A1733219459C8EC28F57D5FADACE20B5C419C50E97B
 ```
 
-**音频成品:** `web/media/waves-balanced.wav`
+**音频成品:** `web/media/waves-audio.wav`
 
 SHA-256:
 
@@ -93,7 +93,7 @@ SHA-256:
 <details>
 <summary>展开来源、哈希和处理记录</summary>
 
-**视频文件:** `web/media/stream-clear.mp4`
+**视频文件:** `web/media/stream-video.mp4`
 
 SHA-256:
 
@@ -101,7 +101,7 @@ SHA-256:
 CD2A8521087709A644922573206C566B4C58C33418D1E23D11CA1B124FE0DDD1
 ```
 
-**音频成品:** `web/media/stream-balanced.wav`
+**音频成品:** `web/media/stream-audio.wav`
 
 SHA-256:
 
@@ -128,7 +128,7 @@ SHA-256:
 <details>
 <summary>展开来源、哈希和处理记录</summary>
 
-**视频文件:** `web/media/summer-night4k.mp4`
+**视频文件:** `web/media/night-insects-video.mp4`
 
 SHA-256:
 
@@ -136,7 +136,7 @@ SHA-256:
 1C07CEB1354B43F4A36BCEA3DE6BDC19EF26609AE2C36DFA88573B120287E953
 ```
 
-**音频成品:** `web/media/forest-night-balanced.wav`
+**音频成品:** `web/media/night-insects-audio.wav`
 
 SHA-256:
 
@@ -163,7 +163,7 @@ SHA-256:
 <details>
 <summary>展开来源、哈希和处理记录</summary>
 
-**视频文件:** `web/media/campfire-close.mp4`
+**视频文件:** `web/media/campfire-video.mp4`
 
 SHA-256:
 
@@ -171,7 +171,7 @@ SHA-256:
 E9EEDC3602D1917C7A6B6FB1BF9F5C685E38F24DCF49462E766925517CA57943
 ```
 
-**音频成品:** `web/media/campfire-balanced.wav`
+**音频成品:** `web/media/campfire-audio.wav`
 
 SHA-256:
 
@@ -198,7 +198,7 @@ C00456052185C6782AA43987977DB4A966EBEA4252BAE892DF7A803E4E35EC22
 <details>
 <summary>展开来源、哈希和处理记录</summary>
 
-**视频文件:** `web/media/music-moon.mp4`
+**视频文件:** `web/media/sleep-music-video.mp4`
 
 SHA-256:
 
@@ -206,7 +206,7 @@ SHA-256:
 7B9EFE5457973C67714565D4CAE30FEE1DD5BF6300D2E417B9683297E10C67AE
 ```
 
-**音频成品:** `web/media/sleep-music-balanced.wav`
+**音频成品:** `web/media/sleep-music-audio.wav`
 
 SHA-256:
 
@@ -233,7 +233,7 @@ SHA-256:
 <details>
 <summary>展开来源、哈希和处理记录</summary>
 
-**视频文件:** `web/media/binaural-calm-light.mp4`
+**视频文件:** `web/media/brainwave-sleep-video.mp4`
 
 SHA-256:
 
@@ -241,7 +241,7 @@ SHA-256:
 E53FE5B2AAA5560B0C466A35E5C46D115B3C7028F0EA0F30CFA9EEBA9BC1FE5E
 ```
 
-**音频成品:** `web/media/brainwave-balanced.wav`
+**音频成品:** `web/media/brainwave-sleep-audio.wav`
 
 SHA-256:
 
@@ -265,7 +265,7 @@ SHA-256:
 
 ## 图标来源文件
 
-基于 Lucide Leaf 的图标文件包括 `web/lucide.js`、`web/leaf.svg` 和 `android/res/drawable/ic_leaf.xml`。许可证和声明要求见[项目许可证记录](../licensing/PROJECT_LICENSES.zh-CN.md)。
+基于 Lucide Leaf 的图标文件包括 `web/lucide.js`、`web/leaf.svg` 和 `android/res/drawable/ic_leaf.xml`。许可证和声明要求见[项目许可证记录](../licensing/THIRD_PARTY_LICENSES.zh-CN.md)。
 
 ## Pexels 浏览器核查与视频技术记录
 
@@ -284,6 +284,6 @@ SHA-256:
 - 这是当前网页预览清单，不单独证明某个 APK 实际打入了哪些文件。
 - 14 项媒体并未逐项记录实际下载日期，审计日期不能代替下载日期。
 - 来源哈希可用于检查文件是否变化，但本身不证明授权。正式归档每项素材时，建议保存条目页、许可页、作者/条目编号、下载日期、原文件哈希、处理命令和成品哈希。
-- 当前播放清单以 `web/tracks.js` 为准；许可状态和未解决问题见 `docs/licensing/PROJECT_LICENSES.zh-CN.md`。
+- 当前播放清单以 `web/tracks.js` 为准；许可状态和未解决问题见 `docs/licensing/THIRD_PARTY_LICENSES.zh-CN.md`。
 
 [更新素材流程](UPDATING_MEDIA.zh-CN.md) · [工具与归档索引](../../tools/README.zh-CN.md)

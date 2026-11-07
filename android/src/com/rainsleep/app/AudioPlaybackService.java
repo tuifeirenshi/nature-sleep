@@ -28,7 +28,7 @@ import java.util.Arrays;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class RainService extends Service {
+public class AudioPlaybackService extends Service {
     public static volatile boolean running = false, playing = false;
     public static volatile long deadline = 0;
     public static volatile int minutes = 0;
@@ -39,9 +39,13 @@ public class RainService extends Service {
     static final String[] IDS = {"rain-jungle", "waves", "stream", "forest-night", "campfire", "sleep-music", "binaural"};
     static final String[] NAMES = {"热带雨林", "海浪", "溪流", "夜间虫鸣", "篝火", "助眠音乐", "脑波助眠"};
     private static final String[] AUDIO_ASSETS = {
-            "rain-jungle-balanced.wav", "waves-balanced.wav", "stream-balanced.wav",
-            "forest-night-balanced.wav", "campfire-balanced.wav", "sleep-music-balanced.wav",
-            "brainwave-balanced.wav"
+            "rainforest-audio.wav", "waves-audio.wav", "stream-audio.wav",
+            "night-insects-audio.wav", "campfire-audio.wav", "sleep-music-audio.wav",
+            "brainwave-sleep-audio.wav"
+    };
+    private static final String[] COVER_ASSETS = {
+            "rainforest.jpg", "waves.jpg", "stream.jpg", "night-insects.jpg",
+            "campfire.jpg", "sleep-music.jpg", "brainwave-sleep.jpg"
     };
     private static final int NOTIFICATION_ID = 1;
     private static final int[] TIMER_MODES = {15, 30, 60, 0};
@@ -97,12 +101,12 @@ public class RainService extends Service {
     }
 
     private PendingIntent serviceAction(int request, String action) {
-        return PendingIntent.getService(this, request, new Intent(this, RainService.class).setAction(action),
+        return PendingIntent.getService(this, request, new Intent(this, AudioPlaybackService.class).setAction(action),
                 PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
     }
 
     private Bitmap coverArt() {
-        try (InputStream in = getAssets().open("media/covers/" + IDS[trackIndex()] + ".jpg")) {
+        try (InputStream in = getAssets().open("media/covers/" + COVER_ASSETS[trackIndex()])) {
             return BitmapFactory.decodeStream(in);
         } catch (Exception error) {
             Log.w("NatureSleep", "Track cover unavailable for " + track, error);

@@ -9,4 +9,4 @@ English | [简体中文](UPDATING_MEDIA.zh-CN.md)
 5. Run `node tools/check-media.cjs`, `git check-ignore --no-index web/media/<filename>`, and `git lfs ls-files`. An approved playback file should not be ignored; local candidates and signing files must remain ignored. The file check does not establish licensing or validate codecs.
 6. Inspect `git diff --cached --stat` and `git diff --cached --name-only` before committing. Preview playback, video switching, covers, and both phone/desktop layouts. Only build an APK when explicitly requested; validate that build and its device behavior separately.
 
-See the [current catalog](MEDIA_CATALOG.md) and [license record](../licensing/PROJECT_LICENSES.md). Archived processing scripts are evidence of earlier work, not a reproducible recipe for every current output.
+See the [current catalog](MEDIA_CATALOG.md) and [license record](../licensing/THIRD_PARTY_LICENSES.md). Archived processing scripts are evidence of earlier work, not a reproducible recipe for every current output.

@@ -2,7 +2,7 @@ English | [简体中文](MEDIA_CATALOG.zh-CN.md)
 
 # Current Media Catalog and Processing Record
 
-Recorded source-audit date: 2026-10-28; catalog layout reorganized: 2026-11-07. This catalog retains the seven media pairs, recorded hashes, sources, and processing gaps. Reorganization is not new verification or permission. See the [license record](../licensing/PROJECT_LICENSES.md).
+Recorded source-audit date: 2026-10-28; catalog layout reorganized: 2026-11-07. This catalog retains the seven media pairs, recorded hashes, sources, and processing gaps. Reorganization is not new verification or permission. See the [license record](../licensing/THIRD_PARTY_LICENSES.md).
 
 ## Current Web Playlist Files
 
@@ -23,7 +23,7 @@ Retained source paths refer to local author copies, not public repository files.
 <details>
 <summary>Expand sources, hashes, and processing</summary>
 
-**Video file:** `web/media/rain-loop4k.mp4`
+**Video file:** `web/media/rainforest-video.mp4`
 
 SHA-256:
 
@@ -31,7 +31,7 @@ SHA-256:
 65427242CD317E93D694111BB94B871ACA4AD09961BA1F9EAF61BA211033C20
 ```
 
-**Audio output:** `web/media/rain-jungle-balanced.wav`
+**Audio output:** `web/media/rainforest-audio.wav`
 
 SHA-256:
 
@@ -58,7 +58,7 @@ CCC718A44325BF104510B694C9D94937A56C2417C777C8781B4DC53B0E54A91C
 <details>
 <summary>Expand sources, hashes, and processing</summary>
 
-**Video file:** `web/media/waves-4k.mp4`
+**Video file:** `web/media/waves-video.mp4`
 
 SHA-256:
 
@@ -66,7 +66,7 @@ SHA-256:
 D10EC7D89415DFDC80D80A1733219459C8EC28F57D5FADACE20B5C419C50E97B
 ```
 
-**Audio output:** `web/media/waves-balanced.wav`
+**Audio output:** `web/media/waves-audio.wav`
 
 SHA-256:
 
@@ -93,7 +93,7 @@ SHA-256:
 <details>
 <summary>Expand sources, hashes, and processing</summary>
 
-**Video file:** `web/media/stream-clear.mp4`
+**Video file:** `web/media/stream-video.mp4`
 
 SHA-256:
 
@@ -101,7 +101,7 @@ SHA-256:
 CD2A8521087709A644922573206C566B4C58C33418D1E23D11CA1B124FE0DDD1
 ```
 
-**Audio output:** `web/media/stream-balanced.wav`
+**Audio output:** `web/media/stream-audio.wav`
 
 SHA-256:
 
@@ -128,7 +128,7 @@ SHA-256:
 <details>
 <summary>Expand sources, hashes, and processing</summary>
 
-**Video file:** `web/media/summer-night4k.mp4`
+**Video file:** `web/media/night-insects-video.mp4`
 
 SHA-256:
 
@@ -136,7 +136,7 @@ SHA-256:
 1C07CEB1354B43F4A36BCEA3DE6BDC19EF26609AE2C36DFA88573B120287E953
 ```
 
-**Audio output:** `web/media/forest-night-balanced.wav`
+**Audio output:** `web/media/night-insects-audio.wav`
 
 SHA-256:
 
@@ -163,7 +163,7 @@ SHA-256:
 <details>
 <summary>Expand sources, hashes, and processing</summary>
 
-**Video file:** `web/media/campfire-close.mp4`
+**Video file:** `web/media/campfire-video.mp4`
 
 SHA-256:
 
@@ -171,7 +171,7 @@ SHA-256:
 E9EEDC3602D1917C7A6B6FB1BF9F5C685E38F24DCF49462E766925517CA57943
 ```
 
-**Audio output:** `web/media/campfire-balanced.wav`
+**Audio output:** `web/media/campfire-audio.wav`
 
 SHA-256:
 
@@ -198,7 +198,7 @@ C00456052185C6782AA43987977DB4A966EBEA4252BAE892DF7A803E4E35EC22
 <details>
 <summary>Expand sources, hashes, and processing</summary>
 
-**Video file:** `web/media/music-moon.mp4`
+**Video file:** `web/media/sleep-music-video.mp4`
 
 SHA-256:
 
@@ -206,7 +206,7 @@ SHA-256:
 7B9EFE5457973C67714565D4CAE30FEE1DD5BF6300D2E417B9683297E10C67AE
 ```
 
-**Audio output:** `web/media/sleep-music-balanced.wav`
+**Audio output:** `web/media/sleep-music-audio.wav`
 
 SHA-256:
 
@@ -233,7 +233,7 @@ SHA-256:
 <details>
 <summary>Expand sources, hashes, and processing</summary>
 
-**Video file:** `web/media/binaural-calm-light.mp4`
+**Video file:** `web/media/brainwave-sleep-video.mp4`
 
 SHA-256:
 
@@ -241,7 +241,7 @@ SHA-256:
 E53FE5B2AAA5560B0C466A35E5C46D115B3C7028F0EA0F30CFA9EEBA9BC1FE5E
 ```
 
-**Audio output:** `web/media/brainwave-balanced.wav`
+**Audio output:** `web/media/brainwave-sleep-audio.wav`
 
 SHA-256:
 
@@ -265,7 +265,7 @@ SHA-256:
 
 ## Icon Source Files
 
-The Lucide Leaf-derived icon files are `web/lucide.js`, `web/leaf.svg`, and `android/res/drawable/ic_leaf.xml`. License and notice requirements are recorded in [PROJECT_LICENSES.md](../licensing/PROJECT_LICENSES.md).
+The Lucide Leaf-derived icon files are `web/lucide.js`, `web/leaf.svg`, and `android/res/drawable/ic_leaf.xml`. License and notice requirements are recorded in [THIRD_PARTY_LICENSES.md](../licensing/THIRD_PARTY_LICENSES.md).
 
 ## Pexels Browser Verification and Video Technical Records
 
@@ -284,6 +284,6 @@ The Lucide Leaf-derived icon files are `web/lucide.js`, `web/leaf.svg`, and `and
 - This is the current web-preview inventory. It does not independently prove which files were packaged in any particular APK.
 - Actual download dates were not recorded for all 14 media items; the audit date is not a substitute.
 - Source hashes help detect file changes but do not prove licensing. Archive each source page, license page, creator/item ID, download date, original hash, processing command, and output hash.
-- The canonical current playback list is `web/tracks.js`; license status and permission questions are in `docs/licensing/PROJECT_LICENSES.md`.
+- The canonical current playback list is `web/tracks.js`; license status and permission questions are in `docs/licensing/THIRD_PARTY_LICENSES.md`.
 
 [Updating media](UPDATING_MEDIA.md) · [Tool and archive index](../../tools/README.md)

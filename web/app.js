@@ -393,7 +393,7 @@ async function setBackground() {
   }
   next.style.objectPosition = selected.id === 'forest-night' ? '35% center' : 'center';
   next.style.filter = 'none';
-  next.poster = `media/covers/${selected.id}.jpg`;
+  next.poster = selected.cover;
   next.preload = 'none';
   next.src = selected.video;
   const firstFrame = waitForVideoData(next);
