@@ -6,7 +6,7 @@
 
 ## 当前网页清单文件
 
-表中的来源文件路径（包括 `tools/cc0-audio/` 和 `tools/moon-detail.mp4`）指作者本机留存副本，未包含在公开仓库中。`web/media/` 中的当前播放文件通过 Git LFS 跟踪。
+表中的来源文件路径（包括 `tools/cc0-audio/` 和 `tools/moon-detail.mp4`）指作者本机留存副本，未包含在公开仓库中。`web/media/` 中的当前播放文件通过 Git LFS 跟踪。历史脚本引用如 `tools/process-yourell-theta.cjs` 和 `tools/process-cc0-audio.cjs` 现已移入 `tools/archive/media/`，文件内容与原始来源路径记录保留。另见[工具索引](../../tools/README.zh-CN.md)和[更新素材流程](UPDATING_MEDIA.zh-CN.md)。
 
 | 音景 | 视频文件 / SHA-256 | 已记录的视频元数据与来源 | 音频成品 / SHA-256 | 留存来源文件 / SHA-256 | 已记录的处理/来源信息 |
 |---|---|---|---|---|---|

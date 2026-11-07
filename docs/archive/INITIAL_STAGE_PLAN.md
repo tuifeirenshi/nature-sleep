@@ -4,13 +4,168 @@
 
 ## English
 
-This plan described an earlier development stage and is retained as historical context. Its version numbers, file paths, proposed steps, and completion criteria are not current instructions. Follow the current bilingual README and current source/license records instead. This archive does not describe the current release. The following Chinese historical plan is more detailed than this English summary.
+This plan described an earlier development stage and is retained as historical context. Its version numbers, file paths, proposed steps, and completion criteria are not current instructions. Follow the current bilingual README and current source/license records instead. This archive does not describe the current release. Statements below about missing Git setup, planned features, media policy, and timer behavior describe that earlier stage, not today's project.
+
+### Scope of the historical plan
+
+Stabilize Android and organize the project so tracks, interface changes, and bug fixes are easier to maintain. Do not rush decisions on a code license, pricing, advertising, Google Play, Windows, iOS, or macOS. Start recording and checking media provenance, license categories, and public source/APK redistribution rights immediately, rather than waiting until upload.
+
+Public-release inventory references: `../licensing/PROJECT_LICENSES.md`, `../licensing/PROJECT_LICENSES.zh-CN.md`, `../media/MEDIA_CATALOG.md`, and `../media/MEDIA_CATALOG.zh-CN.md`. This is a historical plan, not the current release structure.
+
+### Baseline at that stage
+
+- Project: `D:\codex\rain-sleep`; desktop launcher: `open-preview.cmd`; preview: `http://127.0.0.1:8768`.
+- APK: an early prerelease package, not the current release; build entry: `build.ps1`.
+- Web interface: `web\index.html`, `web\app.js`, and `web\style.css`.
+- Android page assets: copied from `web` to `android\package-assets` during the build.
+- Background audio: `android\src\com\rainsleep\app\RainService.java`; page bridge: `android\src\com\rainsleep\app\MainActivity.java`.
+- Seven scenes: rainforest, waves, stream, night insects, campfire, sleep music, and brainwave sleep.
+
+### Step 0: Freeze a recoverable version
+
+Purpose: return to an installable baseline if later changes fail.
+
+1. Retain the early prerelease APK; do not overwrite historical test packages.
+2. Create local Git history and a checkpoint named `v14-before-cleanup`. Explain Git as a code save point; this step creates no GitHub repository and uploads nothing.
+3. Back up APKs and large media separately instead of repeatedly adding copies to code history.
+4. Start the desktop preview and record whether each of the seven scenes plays.
+5. Record five timer cases: setting before playback, changing during playback, canceling, pausing/resuming, and reaching zero.
+6. Append dated/versioned results to `TEST_LOG.md`.
+
+Completion: a clear before-change record, a reinstallable v14 APK, and a recoverable local code checkpoint.
+
+### Step 0.5: Record sources and licenses
+
+Purpose: avoid discovering too late that a video or sound cannot be distributed with public source or an installer.
+
+1. Use the seven groups in the media catalogs as the reference; not every old file under `web\media` is active.
+2. Register both video and audio for each scene: 14 packaged files. Record original item URL/ID, creator, download date, license at download, SHA-256, processed filename, and processing. Existing audit notes had filenames/source clues but not all 14 download-evidence records.
+3. Assess public source redistribution and public APK redistribution separately. Commercial use or private listening permission alone does not establish permission to publish original files.
+4. Mark unclear sources or insufficient evidence as pending in personal debug versions, especially the brainwave video and applicability of Mixkit terms; refer to the license records.
+5. Check sound-effect coverage for offline APK distribution and music coverage for looping, crossfades, and app delivery. Ask the source provider or replace unclear material rather than guessing.
+6. Retain downloaded license/item pages, screenshots or PDFs, license-text versions, and processing records so later webpage changes do not erase the original basis.
+
+Key distinctions in the original plan:
+
+- Downloading or personally using a file does not establish permission to publish it for everyone.
+- Publishing code and publishing a complete APK are separate distributions. The APK still distributes embedded audio/video even if the source repository omits it.
+- Attribution records a source; it does not itself grant permission. Record unclear rights as pending.
+- Pricing and a formal code license need not be decided yet, but each file's source/APK rights determine whether it is retained, replaced, or omitted.
+- The project had no Git repository at that stage. Before creating GitHub history, ignore `dist` APKs, `tools\rain-sleep.keystore`, plaintext script passwords, Android tool downloads, old media, and scratch files. The APK then measured approximately 562 MiB and `web\media` approximately 2.17 GB; ordinary GitHub Git rejected files above 100 MiB.
+
+Completion criteria in that original plan: each file has source/processing evidence and a conclusion of public-source allowed, public-APK allowed, replacement needed, or written confirmation pending. Pending files were to be excluded from public source and installers. This historical criterion does not replace later recorded release decisions.
+
+### Step 1: Separate track data from playback code
+
+Purpose: add a sound by editing one record rather than searching multiple code locations. Proposed file: `web\tracks.js`.
+
+```js
+{
+  id: 'campfire',
+  name: '篝火',
+  icon: 'flame',
+  video: 'campfire-close',
+  audio: 'campfire-balanced',
+  title: '听火焰轻轻作响'
+}
+```
+
+1. Move the `tracks` array from `web\app.js` into `web\tracks.js`.
+2. Store audio filenames explicitly and remove implicit filename construction.
+3. Load `tracks.js` before `app.js` in `index.html`.
+4. Continue copying shared web scripts for Android so desktop and APK use one list.
+5. Add a scene by supplying video, audio, and a record in `tracks.js`.
+
+Completion: a test scene requires only resources and a track record, without changing timer, playback, switching, or layout code.
+
+### Step 2: Standardize resource paths and names
+
+Purpose: avoid missing videos and mismatched web/Android resources. Use `web\media` and one scene ID per pair. Historical proposed pairs:
+
+- `rain-jungle-balanced.wav` + `rain-loop4k.mp4`
+- `waves-balanced.wav` + `waves-4k.mp4`
+- `stream-balanced.wav` + `stream-clear.mp4`
+- `forest-night-balanced.wav` + `summer-night.mp4`
+- `campfire-balanced.wav` + `campfire-close.mp4`
+- `sleep-music-balanced.wav` + `music-moon.mp4`
+- `binaural-balanced.wav` + `binaural-calm-light.mp4`
+
+1. Add explicit `audio` and `video` fields; do not guess names in playback code.
+2. Add a check for missing or empty files per track.
+3. Check audio sample rate, channels, and peaks; reprocess excessively loud/quiet material before replacing it.
+4. Verify videos can decode at least their first frame to avoid empty playback backgrounds.
+
+Completion: all seven scenes pass one check and use the same filenames on web and Android.
+
+### Step 3: Fix playback and timer rules
+
+Purpose: settle confusing behavior before further visual work. These were proposed rules at that stage:
+
+1. With no timer, show “Continuous playback”.
+2. A timer set before playback begins counting down when playback starts.
+3. Changing it during playback restarts the full selected duration.
+4. Clicking the selected duration cancels the timer and restores continuous playback.
+5. Pausing stops the current session, clears its timer, and removes timer selection highlights.
+6. Resuming does not restore the old countdown unless a future remember-timer setting is added.
+7. At zero, fade audio out, stop playback, and show “Timer ended”.
+
+Review `web\app.js`, `RainService.java`, and the web/Android status bridge in `MainActivity.java`. Completion: both platforms follow all seven rules; scene switching does not reset the timer unless the user changes it.
+
+### Step 4: Use data-driven responsive layout
+
+Purpose: display one content set across phone, tablet, and desktop without breaking layout when scenes are added.
+
+1. Generate scene buttons from `tracks.js`.
+2. Use a horizontal scrollable list, one row on wide screens and horizontal swiping on narrow ones.
+3. Avoid per-scene fixed positions or a special patch for the seventh item.
+4. Keep one play button, one timer area, and one settings entry.
+5. Provide clear pressed, selected, and disabled states without abrupt blue browser highlights.
+6. Minimal mode only hides video and retains audio; it does not change scene/timer rules.
+
+Completion: check 390 × 844 phone, 600 × 1024 tablet, 1280 × 800 landscape, and 1440 × 900 desktop. No horizontal overflow or button overlap; scene scrolling works.
+
+### Step 5: Establish a test checklist before generating an APK
+
+After each code change, the original plan prescribed:
+
+1. Desktop preview: page load, all seven scenes, play/pause, and seven timer rules.
+2. Browser console: no unhandled JavaScript errors; video failure leaves controls usable.
+3. Check all four viewport sizes.
+4. Run `powershell -ExecutionPolicy Bypass -File .\build.ps1`.
+5. Keep only the latest three installable APKs under `dist`.
+6. Install on at least one Android 8.0+ device and test locked-screen playback, notification pause, scene switching, timer changes, expiry, and reopening the app.
+7. Mark the new APK installable only after device testing passes.
+
+Completion: record passed/failed/not tested for each case; “should work” is not device-test evidence. This is an archived workflow, not authorization to build APKs automatically.
+
+### Work intentionally deferred at that stage
+
+- Do not migrate to Flutter, React Native, or another framework. Java + WebView + local assets already covers phones/tablets; migration adds compatibility work.
+- Do not stream videos from the network; offline sleep playback avoids interruptions.
+- Defer pricing, ads, analytics, stores, and code-license decisions, but perform step 0.5 first. A code license cannot license third-party media.
+- Do not publish the current APK, entire folder, or whole `tools` directory without excluding/checking keys, passwords, SDK downloads, old material, and large media.
+- Promise no Windows/iOS/macOS release; preserve reusable web UI and track data.
+- Do not blindly add more scenes; stabilize the existing seven first.
+
+### Deliverables by stage
+
+| Stage | Historical deliverable |
+| --- | --- |
+| 0 | `TEST_LOG.md` and a recoverable v14 APK |
+| 0.5 | Archived provenance and per-file distribution conclusions; replacement or written-confirmation plans for unclear material |
+| 1 | `web\tracks.js`; new scenes without playback-logic changes |
+| 2 | Resource checker and passing record |
+| 3 | Consistent web/Android timer behavior |
+| 4 | Four viewport screenshots and no-overflow record |
+| 5 | New signed APK, version, test results, and known limits |
+
+The original recommendation was to begin at step 0 and proceed in order, rather than changing audio, UI, Android service, and build workflow simultaneously.
 
 ## 简体中文
 
 # 自然入眠：初步阶段执行计划（历史存档）
 
-本计划描述的是早期开发阶段，仅作为历史背景保留。文中的版本号、文件路径、拟定步骤和完成标准都不是当前指引。请以当前双语 README 和当前素材/授权记录为准。本存档不代表 `v1.0.0` 当前发布内容。
+本计划描述的是早期开发阶段，仅作为历史背景保留。文中的版本号、文件路径、拟定步骤和完成标准都不是当前指引。请以当前双语 README 和当前素材/授权记录为准。本存档不代表当前发布内容。以下“尚未建立 Git”、拟定功能、素材发布门槛和定时行为均属于当时记录；历史打包流程不代表授权自动生成 APK。
 
 这份计划只处理当前阶段：把 Android 版本做稳定，把结构整理成容易添加音景、修改界面和修复问题的形态。现在不必仓促决定代码许可证、收费方式、广告、Google Play、Windows、iOS 或 macOS 版本；但素材来源、许可类别和能否随公开源码/APK 再发布必须从现在开始核查和记录，不能等到上传前临时补。
 

@@ -12,6 +12,7 @@ android/package-assets/
 *.apk
 *.aab
 *.keystore
+*.jks
 tools/signing.local.properties
 
 # Local preview captures and generated QA images
@@ -41,8 +42,22 @@ tools/platform.zip
 tools/build-tools.zip
 tools/temp/
 
-# The web directory keeps only the seven media pairs used by tracks.js.
+# Explicit allowlist: update tracks.js, this list, and both media catalogs together.
 web/media/*
+!web/media/rain-loop4k.mp4
+!web/media/waves-4k.mp4
+!web/media/stream-clear.mp4
+!web/media/summer-night4k.mp4
+!web/media/campfire-close.mp4
+!web/media/music-moon.mp4
+!web/media/binaural-calm-light.mp4
+!web/media/rain-jungle-balanced.wav
+!web/media/waves-balanced.wav
+!web/media/stream-balanced.wav
+!web/media/forest-night-balanced.wav
+!web/media/campfire-balanced.wav
+!web/media/sleep-music-balanced.wav
+!web/media/brainwave-balanced.wav
 !web/media/covers/
 !web/media/covers/*.jpg
 

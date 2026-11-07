@@ -4,11 +4,11 @@
 
 自然入眠是一款个人实验性质的 Android 声音播放器，包含七种自然音景与助眠声音，并为每种音景配有视频背景。项目仍在调整中，功能、素材和文档都可能变化。声音体验因人而异；本应用不承诺改善睡眠，也不替代医疗建议或治疗。
 
-![手机预览界面（网页预览）](docs/screenshots/v1.0-phone.png)
+![手机预览界面（网页预览）](docs/screenshots/v1.0.1-phone.png)
 
-![电脑预览界面（网页预览）](docs/screenshots/v1.0-desktop.png)
+![电脑预览界面（网页预览）](docs/screenshots/v1.0.1-desktop.png)
 
-以上截图为 v1.0 网页预览，当前界面可能有所不同。
+以上截图为 v1.0.1 网页界面，于 2026-11-07 按 390 × 844 和 1440 × 900 尺寸截取；这是浏览器预览，不是 Android 真机截图。
 
 这是一个**公开源码项目**，不是采用标准开源许可证的项目。公开仓库允许在 GitHub 内查看和 Fork；项目当前没有授予平台外复制、修改、商用或再发布代码的许可。第三方音视频和图标分别依其自身许可证使用。Fork、改版和个人构建不代表官方版本。
 
@@ -40,14 +40,16 @@ Android 应用通过 Gradle Wrapper 和官方 Android Gradle Plugin 构建。Win
 .\build.ps1
 ```
 
-签名密钥及密码仅保存在本机，不提交到 Git。要生成已签名版本，运行脚本前需自行配置 `tools/signing.local.properties` 和自己的密钥，格式参考 `tools/signing.example.properties`；未配置时生成的是未签名版本。不要把真实签名密钥或密码发送给他人或上传到仓库。遗失签名密钥会影响后续为同一应用签名更新。
+只在需要打包 APK 时执行上述命令。签名密钥及密码仅保存在本机，不提交到 Git。要生成已签名版本，运行脚本前需自行配置 `tools/signing.local.properties` 和自己的密钥，格式参考 `tools/signing.example.properties`。未配置时输出 `android/build/outputs/apk/release/app-release-unsigned.apk`，不能直接安装；签名配置有效时在同目录输出 `app-release.apk`。入口脚本会读取 Gradle 的 `output-metadata.json`，报告本次实际输出，避免误选目录中残留的旧 APK。不要把真实签名密钥或密码发送给他人或上传到仓库。遗失签名密钥会影响后续为同一应用签名更新。
 
 ## 仓库目录
 
 - `web/`：播放器界面和当前素材；`android/`：安卓应用和媒体控制。
 - `scripts/`：视频处理和本地预览；`docs/`：许可、素材、发布及开发记录。
-- `tools/`：检查工具及历史素材处理、测试脚本。部分旧脚本写死了本机路径，不能直接在其他电脑使用，也不一定适用于当前版本。
+- `tools/`：当前媒体检查及本机签名模板；历史实验单独放在 `tools/archive/`，不属于当前测试或构建命令。
 - `docs/archive/`：历史笔记，不是当前操作说明。
+
+另见[文档目录](docs/README.zh-CN.md)、[工具索引](tools/README.zh-CN.md)和[更新素材流程](docs/media/UPDATING_MEDIA.zh-CN.md)。当前文件和资料结构检查使用 `node tools/check-media.cjs`。归档浏览器测试需要适配，不属于可直接跨电脑运行的当前回归测试套件。
 
 ## 素材与授权
 

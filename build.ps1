@@ -18,6 +18,5 @@ if ($LASTEXITCODE) { throw 'Media check failed.' }
 & "$root\gradlew.bat" --no-daemon -p $root :app:assembleRelease
 if ($LASTEXITCODE) { throw 'Gradle release build failed.' }
 
-$apk = "$root\android\build\outputs\apk\release\app-release.apk"
-if (!(Test-Path $apk)) { throw "Gradle completed without producing the expected APK: $apk" }
+$apk = & "$root\scripts\resolve-release-apk.ps1" -OutputDirectory "$root\android\build\outputs\apk\release"
 Write-Output "Release APK: $apk"
